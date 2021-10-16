@@ -56,13 +56,55 @@ Se dejara el link para la dos ramas principales pero se puede ver el historial e
   
 ## Elicitación
 
-Evidencia de actividades de investigación
+### Evidencia de actividades de investigación
 
-Referencias a fuentes de información
+Como indica Wiegers en el libro de Software Requirements, la naturaleza del desarrollo de requerimientos es cíclico entre tres aspectos importantes:
 
-Caracterización de usuarios: User Personas
+- Elicitación
+- Análisis
+- Especificación
 
-Modelo conceptual del problema
+Dentro de la etapa de elicitación podemos utilizar distintas técnicas dentro de un mismo proyecto que nos permitan encontrar la información para describir las funcionalidades que cumple cualquier sistema.
+
+El utilizar técnicas que trabajan directamente con el usuario, nos facilita hacer un análisis de requerimientos más específico ya que al fin de cuentas, el sistema que se estará desarrollando terminará siendo esencialmente desarrollado para brindar una solución a los usuarios.
+
+También es importante trabajar con técnicas que permitan a las personas involucradas en el desarrollo o gestión del proyecto, aportar requerimientos que puedan agregar valor al producto, complementando así las técnicas que se enfocan en el usuario final.
+
+Presentamos entonces las diferentes técnicas que se mencionan en el libro:
+
+__Entrevistas__
+
+Esta es la mejor forma de encontrar lo que los usuarios esperan y necesitan del sistema de software que vayamos a desarrollar.
+
+__Workshops__
+
+Los workshops permiten a ambas partes a nutrirse de información, pudiendo así relevar requerimientos directamente de los usuarios finales.
+
+__Focus Groups__
+
+Un focus group como grupo representativo de usuarios, permite explorar las actitudes de los usuarios frente a la interacción de un producto, esto permite la posibilidad de testear, qué funcionalidades son intuitivas y agradables para el usuario y cuáles podrían mejorarse.
+
+__Observaciones__
+
+Al realizar entrevistas, workshops o focus groups como técnicas de elicitación, podemos relevar principalmente la información que los usuarios nos describen. Al realizar observaciones podemos relevar requerimientos que están implícitos en las descripciones que el usuario nos brinda.
+
+__Cuestionarios__
+
+Los cuestionarios son una forma que nos permite realizar consultas generalizadas a un gran grupo de usuarios. Estos no son caros pero suelen ser demasiado genéricos, por lo que es importante tener cuidado al relevar demasiada información únicamente de esta técnica.
+
+__Analisis de interfaz de usuario__
+
+El análisis de interfaz de usuario es una técnica de elicitación que permite descubrir los principales requerimientos funcionales. Permitirles a los usuarios interactuar con el sistema es la mejor forma de relevar requerimientos ya que involucra tambien en cierta forma algunas de las técnicas anteriormente mencionadas.
+También a través de la ingeniería reversa de interfaces de productos similares podemos relevar información y requerimientos que nos serán útiles.
+
+En base a las técnicas anteriormente presentadas, decidimos utilizar el análisis de interfaz de usuario ya que nos permite de forma concreta, relevar los requerimientos funcionales principales.
+Al realizar el análisis sobre interfaces de aplicaciones, que son las más descargadas en las distintas tiendas de aplicaciones, buscamos encontrar también cuales son las funcionalidades de cada una de ellas que le agregan valor al producto para poder implementarlas en nuestro sistema.
+
+### Referencias a fuentes de información
+
+### Caracterización de usuarios: User Personas
+
+### Modelo conceptual del problema
 
 ## Especificación
 
