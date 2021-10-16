@@ -3,11 +3,11 @@ Fecha de entrega: 18-oct-2021
 
 ## Repositorio Git
 
-Creación y uso de repositorios locales y remotos
+### Creación y uso de repositorios locales y remotos
 
 Para la creación y uso de repositorios usamos la herramienta de git. A su vez, también utilizamos el servicio de Github el cual nos ayuda a mantener nuestro código centralizado en un repositorio en la nube.
 
-Comandos Git ejecutados desde terminal y desde el IDE
+### Comandos Git ejecutados desde terminal y desde el IDE
 
 Para trabajar con el sistema de versionado de git, utilizamos los siguientes comandos localmente:
 - git clone
@@ -24,7 +24,7 @@ También utilizamos los siguientes comandos para trabajar remotamente:
 - git push
 - git merge
 
-Las branches al ser remotas fueron creadas desde la interfaz de Github.
+Las ramas al ser remotas fueron creadas desde la interfaz de Github.
 
 ## Versionado
 
@@ -32,7 +32,7 @@ Las branches al ser remotas fueron creadas desde la interfaz de Github.
 
 Algunas de las buenas practicas que se implementaron en el proyecto fueron:
 
-- Creación de branches para actualizar la rama principal
+- Creación de ramas para actualizar la rama principal
 - Nomenclatura específica para cada tipo de branch
     - feature/:nombre_funcionalidad: Se utiliza para la creación de nuevas funcionalidades.
     - bugfix/:nombre_problema: Se utiliza para resolver errores.
@@ -40,9 +40,12 @@ Algunas de las buenas practicas que se implementaron en el proyecto fueron:
 - Creación de Pull Requests con Code Review para antes de realizar el merge
 - Creación de tags para nuevos releases
 
-Uso de ramas separadas de 'main'
+### Uso de ramas separadas de 'main'
 
-Resumen de commits y evolución del proyecto
+Para trabajar de forma colaborativa utilizamos el sistema de versionado de git, en donde "main" es la rama principal en la que se mergean los cambios, los cuales provienen unicamente desde la rama "staging".
+En "staging" a su vez, se mergean las ramas en donde se implementan nuevos features o se aplican fixes, siendo estos modularizados en ramas individuales.
+
+### Resumen de commits y evolución del proyecto
 
 ## Elicitación
 
