@@ -5,7 +5,7 @@ Fecha de entrega: 18-oct-2021
 
 Creación y uso de repositorios locales y remotos
 
-Para la creación y uso de repositorios usamos la herramienta de git, a su vez, también utilizamos el servicio de Github el cual nos ayuda a mantener nuestro código centralizado en un repositorio en la nube.s
+Para la creación y uso de repositorios usamos la herramienta de git. A su vez, también utilizamos el servicio de Github el cual nos ayuda a mantener nuestro código centralizado en un repositorio en la nube.
 
 Comandos Git ejecutados desde terminal y desde el IDE
 
