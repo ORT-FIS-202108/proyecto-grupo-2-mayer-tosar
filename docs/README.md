@@ -18,7 +18,7 @@ Para trabajar con el sistema de versionado de git, utilizamos los siguientes com
 - git add .
 - git commit -m ""
 
-Tambien utilizamos los siguientes comandos de git, para trabajar remotamente:
+También utilizamos los siguientes comandos para trabajar remotamente:
 - git fetch
 - git pull
 - git push
