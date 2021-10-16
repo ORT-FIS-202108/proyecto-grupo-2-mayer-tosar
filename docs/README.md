@@ -100,6 +100,8 @@ También a través de la ingeniería reversa de interfaces de productos similare
 En base a las técnicas anteriormente presentadas, decidimos utilizar el análisis de interfaz de usuario ya que nos permite de forma concreta, relevar los requerimientos funcionales principales.
 Al realizar el análisis sobre interfaces de aplicaciones, que son las más descargadas en las distintas tiendas de aplicaciones, buscamos encontrar también cuales son las funcionalidades de cada una de ellas que le agregan valor al producto para poder implementarlas en nuestro sistema.
 
+[Ir al análisis](./investigacion/README.md)
+
 ### Referencias a fuentes de información
 
 ### Caracterización de usuarios: User Personas
