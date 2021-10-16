@@ -104,6 +104,18 @@ Al realizar el análisis sobre interfaces de aplicaciones, que son las más desc
 
 ### Referencias a fuentes de información
 
+Como fuente de referencia de información, se utilizó el podcast de [Neurona Financiera](https://neuronafinanciera.com/), el cual es un podcast que tiene como objetivo ayudar a que las personas no sufran estrés por dinero, en unos de los [capítulos](https://neuronafinanciera.com/169/) menciona las características que debe tener como mínimo una aplicación de gastos.
+
+Las características que menciona son:
+- Información alojada en la nube
+- Cuentas multimonedas
+- Definir varias cuentas
+- Permitir hacer ajustes en caso de querer cambiar el saldo
+- Definir conceptos de gastos e ingresos
+- Construir un presupuesto, una aproximación futura de los gastos que voy a tener
+- Análisis de los datos, exportar datos
+- Gestión de tarjeta de créditos
+
 ### Caracterización de usuarios: User Personas
 
 ### Modelo conceptual del problema
