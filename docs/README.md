@@ -28,7 +28,17 @@ Las branches al ser remotas fueron creadas desde la interfaz de Github.
 
 ## Versionado
 
-Buenas prácticas de versionado
+### Buenas prácticas de versionado
+
+Algunas de las buenas practicas que se implementaron en el proyecto fueron:
+
+- Creación de branches para actualizar la rama principal
+- Nomenclatura específica para cada tipo de branch
+    - feature/:nombre_funcionalidad: Se utiliza para la creación de nuevas funcionalidades.
+    - bugfix/:nombre_problema: Se utiliza para resolver errores.
+    - hotfix/:nombre_problema: Se utiliza para resolver errores en el entorno de producción.
+- Creación de Pull Requests con Code Review para antes de realizar el merge
+- Creación de tags para nuevos releases
 
 Uso de ramas separadas de 'main'
 
@@ -63,6 +73,3 @@ Validar la solución con personas no involucradas en el proyecto
 Detalle del trabajo individual
 
 Técnicas aplicadas y aprendizajes
-
-
-
