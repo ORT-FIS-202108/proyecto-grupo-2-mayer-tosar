@@ -42,7 +42,14 @@ Algunas de las buenas practicas que se implementaron en el proyecto fueron:
 
 Uso de ramas separadas de 'main'
 
-Resumen de commits y evolución del proyecto
+### Resumen de commits y evolución del proyecto
+
+Para ver el historial de los commits y la evolucion del proyecto, Github permite observar el historial de todos los commits que se realizaron en una rama especifia.
+
+Se dejara el link para la dos ramas principales pero se puede ver el historial en cualquier rama
+
+- [Historial commits rama 'main'](https://github.com/ORT-FIS-202108/proyecto-grupo-2-mayer-tosar/commits/main)
+- [Historial commits rama 'staging'](https://github.com/ORT-FIS-202108/proyecto-grupo-2-mayer-tosar/commits/staging)
 
 ## Elicitación
 
