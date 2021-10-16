@@ -9,6 +9,23 @@ Para la creación y uso de repositorios usamos la herramienta de git. A su vez, 
 
 Comandos Git ejecutados desde terminal y desde el IDE
 
+Para trabajar con el sistema de versionado de git, utilizamos los siguientes comandos localmente:
+- git clone
+- git checkout
+- git status
+- git diff
+- git log
+- git add .
+- git commit -m ""
+
+Tambien utilizamos los siguientes comandos de git, para trabajar remotamente:
+- git fetch
+- git pull
+- git push
+- git merge
+
+Las branches al ser remotas fueron creadas desde la interfaz de Github.
+
 ## Versionado
 
 Buenas prácticas de versionado
