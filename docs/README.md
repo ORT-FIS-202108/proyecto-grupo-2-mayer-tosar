@@ -97,7 +97,7 @@ __Analisis de interfaz de usuario__
 El análisis de interfaz de usuario es una técnica de elicitación que permite descubrir los principales requerimientos funcionales. Permitirles a los usuarios interactuar con el sistema es la mejor forma de relevar requerimientos ya que involucra tambien en cierta forma algunas de las técnicas anteriormente mencionadas.
 También a través de la ingeniería reversa de interfaces de productos similares podemos relevar información y requerimientos que nos serán útiles.
 
-En base a las técnicas mencionadas decidimos utilizar el análisis de interfaz de usuario ya que nos permite de forma concreta, relevar los requerimientos funcionales principales.
+En base a las técnicas anteriormente presentadas, decidimos utilizar el análisis de interfaz de usuario ya que nos permite de forma concreta, relevar los requerimientos funcionales principales.
 Al realizar el análisis sobre interfaces de aplicaciones, que son las más descargadas en las distintas tiendas de aplicaciones, buscamos encontrar también cuales son las funcionalidades de cada una de ellas que le agregan valor al producto para poder implementarlas en nuestro sistema.
 
 ### Referencias a fuentes de información
