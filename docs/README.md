@@ -514,6 +514,8 @@ Completa: -
 
 Bocetos de IU
 
+[Ir a los bocetos](./bocetosiu/README.md)
+
 ## Validación y verificación
 
 Verificar la especificación
