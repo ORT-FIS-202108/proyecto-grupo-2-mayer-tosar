@@ -128,7 +128,42 @@ Luego del relevamiento de información realizado fueron identificados dos perfil
 
 ## Especificación
 
-Definición de requerimientos funcionales y no funcionales
+### Definición de requerimientos funcionales y no funcionales
+
+__Requerimientos Funcionales__
+
+- Los usuarios pueden crearse un perfil con su mail
+- Los usuarios pueden ingresar con su mail
+- Los usuarios pueden crear cuentas referenciando a sus cuentas bancarias, efectivo, etc.
+- Los usuarios pueden crear un gasto y asignarlo a una cuenta
+    - Los gastos pueden ser recurrentes
+- Los usuarios pueden crear un ingreso y asignarlo a una cuenta
+- Los usuarios pueden crear categorías para asignar a los gastos e ingresos
+- Los usuarios pueden ver el balance mensual
+- Los usuarios pueden crear objetivos en un periodo de tiempo
+- Los usuarios pueden ajustar el saldo de las cuentas
+- Los usuarios pueden tener cuentas en diferentes monedas
+- Los usuarios deben poder actualizar el ingreso
+- Los usuarios deben poder actualizar el gasto
+- Los usuarios deben poder actualizar las categorías
+- Los usuarios deben poder borrar un ingreso
+- Los usuarios deben poder borrar un gasto
+- Los usuarios deben poder borrar una categoría
+- Los usuarios puede transferir montos entre cuentas
+- Los usuarios deberán poder borrar una cuenta
+- Los usuarios deberán poder borrar su perfil
+
+__Requerimientos No Funcionales__
+
+- El proyecto debe estar separado por una arquitectura de cliente-servidor para poder ser escalable
+- El tiempo de respuesta de llamado al servidor no debe superar los 4s para ningún caso
+- Todos los endpoints deben estar documentados en un documento de postman cons sus respectivos parámetros
+- La aplicación será desarrollada en español
+- El diseño de la aplicación debe ser intuitivo y brindar accesibilidad a todos los usuarios
+- El servidor debe responder códigos de error con sus respectivos mensajes en el caso que corresponda
+- El sistema debe pasar el test de accesibilidad de Google Lighthouse con más del 90%
+- Las contraseñas deben estar encriptadas
+- La aplicación funcionará correctamente en las últimas dos versiones de los navegadores más populares, Google Chrome, Mozilla Firefox y Safari.
 
 User Stories / Use Cases detallados
 
