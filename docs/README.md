@@ -168,212 +168,314 @@ Estimación: 8
 Completa: -
 ```
 
+```
 ID: #3	
 Título: Crear una cuenta
+
 Narrativa:
-		Como usuario
-Quiero crear una cuenta que puede o no, estar asociada a una cuenta bancaria
-Para agrupar los ingresos y gastos por cuenta
+    		Como usuario
+            Quiero crear una cuenta que puede o no, estar asociada a una cuenta bancaria
+            Para agrupar los ingresos y gastos por cuenta
+
 Criterios de aceptación:
-La cuenta debe aceptar una única moneda
-La cuenta debe tener un nombre
-Los usuarios pueden tener cuentas en diferentes monedas
+- La cuenta debe aceptar una única moneda
+- La cuenta debe tener un nombre
+- Los usuarios pueden tener cuentas en diferentes monedas
+
 Estimación: 8
+
 Completa: -
-ID: #5
+```
+
+```
+ID: #4
 Título: Crear un gasto
+
 Narrativa:
-		Como usuario
-Quiero ingresar un nuevo gasto y asociarlo a una cuenta
-Para mantener agrupados los gastos por cuenta
+    		Como usuario
+            Quiero ingresar un nuevo gasto y asociarlo a una cuenta
+            Para mantener agrupados los gastos por cuenta
+
 Criterios de aceptación:
-El gasto debe tener un monto, fecha, categoría y asociarse a una cuenta
-El gasto debe poder ser recurrente (diario, mensual, anual)
+- El gasto debe tener un monto, fecha, categoría y asociarse a una cuenta
+- El gasto debe poder ser recurrente (diario, mensual, anual)
+
 Estimación: 20
+
 Completa: -
-ID: #6
+```
+
+```
+ID: #5
 Título: Crear un ingreso
+
 Narrativa:
-		Como usuario
-Quiero agregar un nuevo ingreso y asociarlo a una cuenta
-Para mantener agrupados los ingresos por cuenta
+    		Como usuario
+            Quiero agregar un nuevo ingreso y asociarlo a una cuenta
+            Para mantener agrupados los ingresos por cuenta
+
 Criterios de aceptación:
-El ingreso debe tener un monto, fecha, categoría y asociarse a una cuenta
-El ingreso debe poder ser recurrente (diario, mensual, anual)
+- El ingreso debe tener un monto, fecha, categoría y asociarse a una cuenta
+- El ingreso debe poder ser recurrente (diario, mensual, anual)
+
 Estimación: 20
+
 Completa: -
-ID: #7
+```
+
+```
+ID: #6
 Título: Crear una categoría
+
 Narrativa:
-		Como usuario
-Quiero crear una nueva categoría
-Para mantener poder agrupados los ingresos y gastos categoria
+    		Como usuario
+            Quiero crear una nueva categoría
+            Para mantener poder agrupados los ingresos y gastos categoria
+
 Criterios de aceptación:
-La categoría debe contener un nombre
-El nombre debera contener al menos 1 caracter
-El nombre de la categoría no debe existir en el sistema para ese usuario
+- La categoría debe contener un nombre
+- El nombre debera contener al menos 1 caracter
+- El nombre de la categoría no debe existir en el sistema para ese usuario
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #7
+Título: Ver balance mensual
+
+Narrativa:
+    		Como usuario
+            Quiero ver el balance mensual entre los ingresos y gastos
+            Para conocer el estado de mis finanzas
+
+Criterios de aceptación:
+- El balance se tiene que mostrar con un listado de los ingresos y gastos divididos por categorías
+- El balance debe mostrar el resultado de los gastos e ingresos
+
 Estimación: 13
 Completa: -
+```
 
+```
 ID: #8
-Título: Ver Balance Mensual
-Narrativa:
-		Como usuario
-Quiero ver el balance mensual entre los ingresos y gastos
-Para conocer el estado de mis finanzas
-Criterios de aceptación:
-El balance se tiene que mostrar con un listado de los ingresos y gastos divididos por categorías
-El balance debe mostrar el resultado de los gastos e ingresos
-Estimación: 13
-Completa: -
-
-ID: #9
 Título: Crear objetivos
 Narrativa:
-		Como usuario
-Quiero crear objetivos a cumplir en un periodo de tiempo
-Para manejar mis ingresos y gastos y superar mis metas
-Criterios de aceptación:
-Los objetivos deben tener un título, descripción y fecha límite, saldo
-Estimación: 13
-Completa: -
+    		Como usuario
+            Quiero crear objetivos a cumplir en un periodo de tiempo
+            Para manejar mis ingresos y gastos y superar metas
 
-ID: #10
+Criterios de aceptación:
+- Los objetivos deben tener un título, descripción y fecha límite y saldo
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #9
 Título: Ajustar el saldo de una cuenta
-Narrativa:
-		Como usuario
-Quiero poder ajustar el saldo de cualquiera de mis cuentas
-Para poder administrar mis cuentas
-Criterios de aceptación:
-Estimación: 8
-Completa: -
 
-ID: #11
+Narrativa:
+    		Como usuario
+            Quiero poder ajustar el saldo de cualquiera de mis cuentas
+            Para poder administrar mis cuentas
+
+Criterios de aceptación:
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #10
 Título: Actualizar ingreso
+
 Narrativa:
-		Como usuario
-Quiero poder actualizar uno de los ingresos agregados anteriormente
-Para poder administrar mis ingresos
+    		Como usuario
+            Quiero poder actualizar uno de los ingresos agregados anteriormente
+            Para poder administrar mis ingresos
+
 Criterios de aceptación:
-Se podrá modificar la fecha y el saldo
+- Se podrá modificar la fecha y el saldo
+
 Estimación: 8
+
 Completa: -
+```
 
-
-ID: #12
+```
+ID: #11
 Título: Actualizar gasto
-Narrativa:
-		Como usuario
-Quiero poder actualizar uno de los gastos agregados anteriormente
-Para poder administrar mis gastos
-Criterios de aceptación:
-Se podrá modificar la fecha y el saldo
-Estimación: 8
-Completa: -
 
-ID: #13
+Narrativa:
+    		Como usuario
+            Quiero poder actualizar uno de los gastos agregados anteriormente
+            Para poder administrar mis gastos
+
+Criterios de aceptación:
+- Se podrá modificar la fecha y el saldo
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #12
 Título: Actualizar categoría
+
 Narrativa:
-		Como usuario
-Quiero poder actualizar una categoría que haya creado anteriormente
-Para poder cambiar el nombre de una categoria
+    		Como usuario
+            Quiero poder actualizar una categoría que haya creado anteriormente
+            Para poder cambiar el nombre de una categoria
+
 Criterios de aceptación:
-El nombre deberá contener al menos 1 caracter
+- El nombre deberá contener al menos 1 caracter
+
 Estimación: 8
 Completa: -
+```
 
-ID: #14
+```
+ID: #13
 Título: Eliminar ingreso
+
 Narrativa:
-		Como usuario
-Quiero poder eliminar un ingreso que haya creado anteriormente
-Para modificar los ingresos de una cuenta
+    		Como usuario
+            Quiero poder eliminar un ingreso que haya creado anteriormente
+            Para modificar los ingresos de una cuenta
+
 Criterios de aceptación:
-El ingreso debe existir para el usuario, para a cuenta creada
-Debe permitir eliminar solo el ingreso actual, o en el caso que sea recurrente todos los ingresos relacionados o solo los pendientes.
+- El ingreso debe existir para el usuario, para la cuenta creada
+- Debe permitir eliminar solo el ingreso actual, o en el caso que sea recurrente todos los ingresos relacionados o solo los pendientes.
+
 Estimación: 13
+
 Completa: -
+```
 
-
-ID: #15
+```
+ID: #14
 Título: Eliminar gasto
-Narrativa:
-		Como usuario
-Quiero poder eliminar un gasto que haya sido creado anteriormente
-Para modificar los gastos de una cuenta
-Criterios de aceptación:
-El gasto debe existir para el usuario, para a cuenta creada
-Debe permitir eliminar solo el gasto actual, o en el caso que sea recurrente todos los gastos relacionados o solo los pendientes.
-Estimación: 13
-Completa: -
 
-ID: #16
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar un gasto que haya sido creado anteriormente
+            Para modificar los gastos de una cuenta
+
+Criterios de aceptación:
+- El gasto debe existir para el usuario, para la cuenta creada
+- Debe permitir eliminar solo el gasto actual, o en el caso que sea recurrente todos los gastos relacionados o solo los pendientes.
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #15
 Título: Eliminar una categoría
-Narrativa:
-		Como usuario
-Quiero poder eliminar una categoria que haya sido creada anteriormente
-Para modificar las categorias creadas
-Criterios de aceptación:
-La categoría debe existir para el usuario
-Estimación: 8
-Completa: -
 
-ID: #17
-Título: Transferir montos
 Narrativa:
-		Como usuario
-Quiero poder transferir montos entre cuentas
-Para poder replicar la realidad, esto significa poder quitar un monto de una cuenta e ingresar ese monto en otra.
+    		Como usuario
+            Quiero poder eliminar una categoria que haya sido creada anteriormente
+            Para modificar las categorias creadas
+
 Criterios de aceptación:
-las dos cuentas deben existir para el usuario
-las dos cuentas deben tener la misma moneda
-se debe poder quitar un monto mayor al saldo de una cuenta
+- La categoría debe existir para el usuario
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #16
+Título: Transferir montos
+
+Narrativa:
+    		Como usuario
+            Quiero poder transferir montos entre cuentas
+            Para poder replicar la realidad, esto significa poder quitar un monto de una cuenta e ingresar ese monto en otra.
+
+Criterios de aceptación:
+- Las dos cuentas deben existir para el usuario
+- Las dos cuentas deben tener la misma moneda
+- Se debe poder quitar un monto mayor al saldo de una cuenta
+
 Estimación: 13
 Completa: -
+```
 
-
-ID: #18
+```
+ID: #17
 Título: Eliminar cuenta
+
 Narrativa:
-		Como usuario
-Quiero poder eliminar una cuenta
-Para poder administrar mis cuentas
+    		Como usuario
+            Quiero poder eliminar una cuenta
+            Para poder administrar mis cuentas
+
 Criterios de aceptación:
-Antes de eliminar una cuenta se debe solicitar una confirmación
+- Antes de eliminar una cuenta se debe solicitar una confirmación
+
 Estimación: 5
+
 Completa: -
+```
 
-
-ID: #19
+```
+ID: #18
 Título: Eliminar perfil
-Narrativa:
-		Como usuario
-Quiero poder eliminar mi perfil de usuario
-Para eliminar la información que generé de mis gastos
-Criterios de aceptación:
-Estimación: 5
-Completa: -
 
-ID: #20
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar mi perfil de usuario
+            Para eliminar la información que generé de mis gastos
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
+
+```
+ID: #19
 Título: Tiempo de respuesta
-Narrativa:
-		Como product owner
-Quiero que el tiempo de respuesta de cualquier llamado al servidor demore menos de 4 segundos
-Para optimizar la performance
-Criterios de aceptación:
-Estimación: 5
-Completa: -
 
-ID: #21
+Narrativa:
+    		Como product owner
+            Quiero que el tiempo de respuesta de cualquier llamado al servidor demore menos de 4 segundos
+            Para optimizar la performance
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
+
+```
+ID: #20
 Título: Accesibilidad
-Narrativa:
-		Como product owner
-Quiero que el sistema pase el test de Google Lighthouse con más del 90%
-Para optimizar la performance
-Criterios de aceptación:
-Estimación: 5
-Completa: -
 
+Narrativa:
+    		Como product owner
+            Quiero que el sistema pase el test de Google Lighthouse con más del 90%
+            Para optimizar la performance
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
 
 Bocetos de IU
 
