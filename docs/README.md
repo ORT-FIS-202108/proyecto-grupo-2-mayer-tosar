@@ -124,6 +124,8 @@ Luego del relevamiento de información realizado fueron identificados dos perfil
 
 ### Modelo conceptual del problema
 
+[Ir al modelo conceptual](./modeloconceptual/README.md)
+
 ## Especificación
 
 Definición de requerimientos funcionales y no funcionales
