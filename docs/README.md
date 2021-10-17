@@ -118,6 +118,10 @@ Las características que menciona son:
 
 ### Caracterización de usuarios: User Personas
 
+Luego del relevamiento de informacion realizado fueron identificados dos perfiles con personalidades definidas.
+
+[Ir a los user personas](./userpersonas/README.md)
+
 ### Modelo conceptual del problema
 
 ## Especificación
