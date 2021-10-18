@@ -10,19 +10,19 @@ Para la creación y uso de repositorios usamos la herramienta de git. A su vez, 
 ### Comandos Git ejecutados desde terminal y desde el IDE
 
 Para trabajar con el sistema de versionado de git, utilizamos los siguientes comandos localmente:
-- git clone
-- git checkout
-- git status
-- git diff
-- git log
-- git add .
-- git commit -m ""
+- ``git clone``
+- ``git checkout``
+- ``git status``
+- ``git diff``
+- ``git log``
+- ``git add .``
+- ``git commit -m descripcion_del_comentario``
 
 También utilizamos los siguientes comandos para trabajar remotamente:
-- git fetch
-- git pull
-- git push
-- git merge
+- ``git fetch``
+- ``git pull``
+- ``git push``
+- ``git merge``
 
 Las ramas al ser remotas fueron creadas desde la interfaz de Github.
 
@@ -128,11 +128,393 @@ Luego del relevamiento de información realizado fueron identificados dos perfil
 
 ## Especificación
 
-Definición de requerimientos funcionales y no funcionales
+### Definición de requerimientos funcionales y no funcionales
 
-User Stories / Use Cases detallados
+__Requerimientos Funcionales__
+
+- Los usuarios pueden crearse un perfil con su mail
+- Los usuarios pueden ingresar con su mail
+- Los usuarios pueden crear cuentas referenciando a sus cuentas bancarias, efectivo, etc.
+- Los usuarios pueden crear un gasto y asignarlo a una cuenta
+    - Los gastos pueden ser recurrentes
+- Los usuarios pueden crear un ingreso y asignarlo a una cuenta
+- Los usuarios pueden crear categorías para asignar a los gastos e ingresos
+- Los usuarios pueden ver el balance mensual
+- Los usuarios pueden crear objetivos en un periodo de tiempo
+- Los usuarios pueden ajustar el saldo de las cuentas
+- Los usuarios pueden tener cuentas en diferentes monedas
+- Los usuarios deben poder actualizar el ingreso
+- Los usuarios deben poder actualizar el gasto
+- Los usuarios deben poder actualizar las categorías
+- Los usuarios deben poder borrar un ingreso
+- Los usuarios deben poder borrar un gasto
+- Los usuarios deben poder borrar una categoría
+- Los usuarios puede transferir montos entre cuentas
+- Los usuarios deberán poder borrar una cuenta
+- Los usuarios deberán poder borrar su perfil
+
+__Requerimientos No Funcionales__
+
+- El proyecto debe estar separado por una arquitectura de cliente-servidor para poder ser escalable
+- El tiempo de respuesta de llamado al servidor no debe superar los 4s para ningún caso
+- Todos los endpoints deben estar documentados en un documento de postman cons sus respectivos parámetros
+- La aplicación será desarrollada en español
+- El diseño de la aplicación debe ser intuitivo y brindar accesibilidad a todos los usuarios
+- El servidor debe responder códigos de error con sus respectivos mensajes en el caso que corresponda
+- El sistema debe pasar el test de accesibilidad de Google Lighthouse con más del 90%
+- Las contraseñas deben estar encriptadas
+- La aplicación funcionará correctamente en las últimas dos versiones de los navegadores más populares, Google Chrome, Mozilla Firefox y Safari.
+
+### User Stories / Use Cases detallados
+
+```
+ID: #1	
+Título: Registrar usuario 
+
+Narrativa:
+            Como usuario
+            Quiero registrar un nuevo perfil
+            Para acceder a mi cuenta, ver mis ingresos, gastos y objetivos
+
+Criterios de aceptación:
+- El email del usuario a registrar no debe coincidir con un usuario ya registrado
+- La contraseña debe contener al menos 6 caracteres
+
+Estimación: 20
+
+Completa: -
+```
+
+```
+ID: #2	
+Título: Ingresar con usuario registrado
+
+Narrativa:
+    		Como usuario
+	    	Quiero ingresar al sistema con mi perfil
+            Para ver, crear y modificar mis ingresos, gastos y objetivos
+
+Criterios de aceptación:
+- El email del usuario debe estar registrado en el sistema
+- El email y contraseña deben ser válidas y coincidir con las del usuario registrado
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #3	
+Título: Crear una cuenta
+
+Narrativa:
+    		Como usuario
+            Quiero crear una cuenta que puede o no, estar asociada a una cuenta bancaria
+            Para agrupar los ingresos y gastos por cuenta
+
+Criterios de aceptación:
+- La cuenta debe aceptar una única moneda
+- La cuenta debe tener un nombre
+- Los usuarios pueden tener cuentas en diferentes monedas
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #4
+Título: Crear un gasto
+
+Narrativa:
+    		Como usuario
+            Quiero ingresar un nuevo gasto y asociarlo a una cuenta
+            Para mantener agrupados los gastos por cuenta
+
+Criterios de aceptación:
+- El gasto debe tener un monto, fecha, categoría y asociarse a una cuenta
+- El gasto debe poder ser recurrente (diario, mensual, anual)
+
+Estimación: 20
+
+Completa: -
+```
+
+```
+ID: #5
+Título: Crear un ingreso
+
+Narrativa:
+    		Como usuario
+            Quiero agregar un nuevo ingreso y asociarlo a una cuenta
+            Para mantener agrupados los ingresos por cuenta
+
+Criterios de aceptación:
+- El ingreso debe tener un monto, fecha, categoría y asociarse a una cuenta
+- El ingreso debe poder ser recurrente (diario, mensual, anual)
+
+Estimación: 20
+
+Completa: -
+```
+
+```
+ID: #6
+Título: Crear una categoría
+
+Narrativa:
+    		Como usuario
+            Quiero crear una nueva categoría
+            Para mantener poder agrupados los ingresos y gastos categoria
+
+Criterios de aceptación:
+- La categoría debe contener un nombre
+- El nombre debera contener al menos 1 caracter
+- El nombre de la categoría no debe existir en el sistema para ese usuario
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #7
+Título: Ver balance mensual
+
+Narrativa:
+    		Como usuario
+            Quiero ver el balance mensual entre los ingresos y gastos
+            Para conocer el estado de mis finanzas
+
+Criterios de aceptación:
+- El balance se tiene que mostrar con un listado de los ingresos y gastos divididos por categorías
+- El balance debe mostrar el resultado de los gastos e ingresos
+
+Estimación: 13
+Completa: -
+```
+
+```
+ID: #8
+Título: Crear objetivos
+Narrativa:
+    		Como usuario
+            Quiero crear objetivos a cumplir en un periodo de tiempo
+            Para manejar mis ingresos y gastos y superar metas
+
+Criterios de aceptación:
+- Los objetivos deben tener un título, descripción y fecha límite y saldo
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #9
+Título: Ajustar el saldo de una cuenta
+
+Narrativa:
+    		Como usuario
+            Quiero poder ajustar el saldo de cualquiera de mis cuentas
+            Para poder administrar mis cuentas
+
+Criterios de aceptación:
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #10
+Título: Actualizar ingreso
+
+Narrativa:
+    		Como usuario
+            Quiero poder actualizar uno de los ingresos agregados anteriormente
+            Para poder administrar mis ingresos
+
+Criterios de aceptación:
+- Se podrá modificar la fecha y el saldo
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #11
+Título: Actualizar gasto
+
+Narrativa:
+    		Como usuario
+            Quiero poder actualizar uno de los gastos agregados anteriormente
+            Para poder administrar mis gastos
+
+Criterios de aceptación:
+- Se podrá modificar la fecha y el saldo
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #12
+Título: Actualizar categoría
+
+Narrativa:
+    		Como usuario
+            Quiero poder actualizar una categoría que haya creado anteriormente
+            Para poder cambiar el nombre de una categoria
+
+Criterios de aceptación:
+- El nombre deberá contener al menos 1 caracter
+
+Estimación: 8
+Completa: -
+```
+
+```
+ID: #13
+Título: Eliminar ingreso
+
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar un ingreso que haya creado anteriormente
+            Para modificar los ingresos de una cuenta
+
+Criterios de aceptación:
+- El ingreso debe existir para el usuario, para la cuenta creada
+- Debe permitir eliminar solo el ingreso actual, o en el caso que sea recurrente todos los ingresos relacionados o solo los pendientes.
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #14
+Título: Eliminar gasto
+
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar un gasto que haya sido creado anteriormente
+            Para modificar los gastos de una cuenta
+
+Criterios de aceptación:
+- El gasto debe existir para el usuario, para la cuenta creada
+- Debe permitir eliminar solo el gasto actual, o en el caso que sea recurrente todos los gastos relacionados o solo los pendientes.
+
+Estimación: 13
+
+Completa: -
+```
+
+```
+ID: #15
+Título: Eliminar una categoría
+
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar una categoria que haya sido creada anteriormente
+            Para modificar las categorias creadas
+
+Criterios de aceptación:
+- La categoría debe existir para el usuario
+
+Estimación: 8
+
+Completa: -
+```
+
+```
+ID: #16
+Título: Transferir montos
+
+Narrativa:
+    		Como usuario
+            Quiero poder transferir montos entre cuentas
+            Para poder replicar la realidad, esto significa poder quitar un monto de una cuenta e ingresar ese monto en otra.
+
+Criterios de aceptación:
+- Las dos cuentas deben existir para el usuario
+- Las dos cuentas deben tener la misma moneda
+- Se debe poder quitar un monto mayor al saldo de una cuenta
+
+Estimación: 13
+Completa: -
+```
+
+```
+ID: #17
+Título: Eliminar cuenta
+
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar una cuenta
+            Para poder administrar mis cuentas
+
+Criterios de aceptación:
+- Antes de eliminar una cuenta se debe solicitar una confirmación
+
+Estimación: 5
+
+Completa: -
+```
+
+```
+ID: #18
+Título: Eliminar perfil
+
+Narrativa:
+    		Como usuario
+            Quiero poder eliminar mi perfil de usuario
+            Para eliminar la información que generé de mis gastos
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
+
+```
+ID: #19
+Título: Tiempo de respuesta
+
+Narrativa:
+    		Como product owner
+            Quiero que el tiempo de respuesta de cualquier llamado al servidor demore menos de 4 segundos
+            Para optimizar la performance
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
+
+```
+ID: #20
+Título: Accesibilidad
+
+Narrativa:
+    		Como product owner
+            Quiero que el sistema pase el test de Google Lighthouse con más del 90%
+            Para optimizar la performance
+
+Criterios de aceptación:
+
+Estimación: 5
+
+Completa: -
+```
 
 Bocetos de IU
+
+[Ir a los bocetos](./bocetosiu/README.md)
 
 ## Validación y verificación
 
@@ -142,6 +524,32 @@ Validar la solución con personas no involucradas en el proyecto
 
 ## Reflexión
 
-Detalle del trabajo individual
+__Reflexion Agustín__
 
-Técnicas aplicadas y aprendizajes
+Esta primera etapa nos brindó un panorama general para concretar cualquier idea que se nos presente y nos permitió comenzar a desarrollar un proyecto colaborativo.
+Esto nos permitió también, aparte de profundizar en herramientas como git, realizar un relevamiento de requerimientos, aprender a realizar requerimientos funcionales y no funcionales, modelar de forma correcta un problema y utilizar user stories para planificar y refinar el proyecto.
+
+Personalmente, considero que haber trabajado con estas herramientas nos permitió crecer profesionalmente ya que son herramientas y técnicas que se utilizan en empresas de tecnologías actuales. Por otro lado, hemos trabajado con Joaquin en otros proyectos y siempre nos hemos complementado y hemos sabido dividir las tareas de forma de poder optimizar los tiempos y recursos.
+
+
+__Reflexión Joaquín__
+
+Al realizar un proyecto desde cero me dio perspectivas de todas las cosas necesarias para realizarlo con éxito. Si bien actualmente trabajo en una empresa de tecnología, aprendí que hay cosas que no estaba realizando, como por ejemplo, la creación de User Stories detalladas o tener una lista de requerimientos, que realmente te ayudan a la hora de realizar las tareas porque no se genera ambigüedad a la hora de realizar las tareas.
+
+### Técnicas aplicadas y aprendizajes
+
+__Técnicas Aplicadas__
+
+Pull Request: Realizamos Pull Request de Github para poder corregir las funcionalidad que hacíamos cada uno, esto nos permitió dar feedback sobre el trabajo realizado y a la vez evitar enviar errores a la rama principal. 
+
+Miro: Utilizamos esta herramienta para realizar el Modelo Conceptual del Problema, la misma nos permitió crear “post-its” para plantear nuestras ideas del problema y relacionarlas unas con otras.
+
+Balsamiq Wireframes: Para realizar el prototipo de la app utilizamos este software para prototipar ya que ofrece componentes y una interfaz amigable para realizar los prototipos.
+
+Planning Poker: Para estimar las User Stories utilizamos la herramienta de Planning Poker la cual nos permite realizar una puntuación a cada tarea según nuestra percepción del problema.
+
+__Aprendizajes__
+
+Al haber realizado la presentación de git, pudimos profundizar conocimientos de ramas y resolución de conflictos y merges.
+
+También consideramos que en base al obligatorio pudimos reforzar muchos conocimientos que se habían dado en clase como los métodos de relevamiento de requerimientos y user stories que son conceptos que en nuestros respectivos trabajos se utilizan y nos afectan directamente.
