@@ -15,3 +15,7 @@ Vistas prototipadas:
 - Cuentas
 - Movimientos
 - Categorias
+
+Actualmente tenemos el prototipo para poder presentarlo y recibir feedback acerca de las funcionalidades a ser desarrolladas, pero tambien estmos realizando los bocetos de la UI para lograr mostrar y obtener feedback del diseño y accesibilidad de la app.
+
+[Ir al boceto UI](https://xd.adobe.com/view/913005d0-763d-416b-83d7-7faf6b3ccd07-c463/)
