@@ -520,6 +520,10 @@ Bocetos de IU
 
 ### Verificar la especificación
 
+Luego de realizado los bocetos, el modelo conceptual del problema, especificado los requerimientos funcionales y no funcionales, entendemos que cumplen la especificaciones del producto a ser desarrollado. A su vez, como se menciona en la validación con otra persona no involucrada en el proyecto obtuvimos feedback acerca del flujo del proyecto pero que no afectan a la especificaciones del mismo.
+
+Cabe destacar que durante el proceso de desarrollo del proyecto, seguiremos verificando los requerimientos funcionales y no funcionales para cumplir con la verificación de las especificaciones.
+
 ### Validar la solución con personas no involucradas en el proyecto
 
 Para realizar la validación de las especificaciones se realizó una entrevista a un integrante del equipo de desarrollo de la empresa Vexels.
