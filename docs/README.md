@@ -524,6 +524,14 @@ Validar la solución con personas no involucradas en el proyecto
 
 ## Reflexión
 
+__Reflexion Agustín__
+
+Esta primera etapa nos brindó un panorama general para concretar cualquier idea que se nos presente y nos permitió comenzar a desarrollar un proyecto colaborativo.
+Esto nos permitió también, aparte de profundizar en herramientas como git, realizar un relevamiento de requerimientos, aprender a realizar requerimientos funcionales y no funcionales, modelar de forma correcta un problema y utilizar user stories para planificar y refinar el proyecto.
+
+Personalmente, considero que haber trabajado con estas herramientas nos permitió crecer profesionalmente ya que son herramientas y técnicas que se utilizan en empresas de tecnologías actuales. Por otro lado, hemos trabajado con Joaquin en otros proyectos y siempre nos hemos complementado y hemos sabido dividir las tareas de forma de poder optimizar los tiempos y recursos.
+
+
 __Reflexión Joaquín__
 
 Al realizar un proyecto desde cero me dio perspectivas de todas las cosas necesarias para realizarlo con éxito. Si bien actualmente trabajo en una empresa de tecnología, aprendí que hay cosas que no estaba realizando, como por ejemplo, la creación de User Stories detalladas o tener una lista de requerimientos, que realmente te ayudan a la hora de realizar las tareas porque no se genera ambigüedad a la hora de realizar las tareas.
