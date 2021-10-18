@@ -518,9 +518,35 @@ Bocetos de IU
 
 ## Validación y verificación
 
-Verificar la especificación
+### Verificar la especificación
 
-Validar la solución con personas no involucradas en el proyecto
+### Validar la solución con personas no involucradas en el proyecto
+
+Para realizar la validación de las especificaciones se realizó una entrevista a un integrante del equipo de desarrollo de la empresa Vexels.
+
+En dicha entrevista buscamos verificar tres puntos principales:
+- Usabilidad
+- Funcionalidad
+- Valor del producto
+
+Buscamos hacer estos puntos medibles mediante objetivos marcados e identificables, tales como:
+- Antes de presentar el boceto de la aplicación explicar el objetivo general de la misma sin entrar en detalles para que el usuario nos diga si en general la aplicación es intuitiva o no.
+- Solicitar que utilice la app y en caso de que tuviese una consulta, explicarnos para lograr identificar cuáles son los flujos que no son del todo intuitivos.
+- En el caso de identificar que alguno de los flujos fuese más simple de otra forma, nos lo indique.
+- Nos indique alguna de las posibilidades que brinda la aplicación que le gusta más, o que quizás no había visto en otras aplicaciones similares.
+
+En el transcurso de la entrevista logramos identificar que dentro del requerimiento para Crear una cuenta, el usuario indicó que “no está claro lo que significa el campo nombre” de una cuenta, ya que no entendía si tenía que asociarla a una cuenta real o simplemente era un nombre que referencia a un concepto de cuenta financiera.
+
+Por otro lado se indicó que el dashboard del inicio “es bastante intuitivo y claro”, haciendo sencillo el uso de las opciones a algunas de las funcionalidades que ofrece la app.
+
+También se marcó en la pantalla de Movimientos que el espacio de arriba “no es necesario y dificulta seleccionar fácilmente alguna de las opciones de abajo”. Como detalle estético también se identificó que la letra de Movimientos debería ser más grande.
+
+Algo que se marcó a corregir en la pantalla de Crear gastos, fue que no queda claro que si el gasto es recurrente, cuál es el periodo de dicha recurrencia.
+
+Otro detalle que “se puede mejorar” según el entrevistado, “es que al crear un ingreso [el usuario tiene] que depositar luego el mismo monto en los objetivos”. Funcionalidad que se podría mejorar para una siguiente etapa.
+
+Por último, se señala que la funcionalidad de “objetivos es algo que no todas las apps de gastos tienen” y que le agrega valor, siendo así “una de las características principales que tiene la app”.
+
 
 ## Reflexión
 
