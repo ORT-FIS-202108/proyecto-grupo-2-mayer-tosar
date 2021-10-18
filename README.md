@@ -3,7 +3,7 @@
 | Identificación del proyecto
 |-----------
 | Fundamentos de Ingeniería de Software
-ID M4A - Docente: Alejandro Adorjan
+ID N3A - Docente: Miguel Sánchez & Gabriela Sánchez
 Estudiantes: Joaquin Mayer, Agustin Tosar
 
 Lectura: 30-ago-2021
