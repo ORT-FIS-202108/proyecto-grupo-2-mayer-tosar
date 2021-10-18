@@ -553,6 +553,3 @@ __Aprendizajes__
 Al haber realizado la presentación de git, pudimos profundizar conocimientos de ramas y resolución de conflictos y merges.
 
 También consideramos que en base al obligatorio pudimos reforzar muchos conocimientos que se habían dado en clase como los métodos de relevamiento de requerimientos y user stories que son conceptos que en nuestros respectivos trabajos se utilizan y nos afectan directamente.
-
-
-
