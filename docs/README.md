@@ -526,4 +526,9 @@ Validar la solución con personas no involucradas en el proyecto
 
 Detalle del trabajo individual
 
+__Reflexión Joaquín__
+
+Al realizar un proyecto desde cero me dio perspectivas de todas las cosas necesarias para realizarlo con éxito. Si bien actualmente trabajo en una empresa de tecnología, aprendí que hay cosas que no estaba realizando, como por ejemplo, la creación de User Stories detalladas o tener una lista de requerimientos, que realmente te ayudan a la hora de realizar las tareas porque no se genera ambigüedad a la hora de realizar las tareas.
+
+
 Técnicas aplicadas y aprendizajes
