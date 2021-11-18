@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - interfaz',
-    title: 'interfaz',
+    titleTemplate: '%s - Mis Gastos',
+    title: 'Inicio',
     htmlAttrs: {
       lang: 'en'
     },
