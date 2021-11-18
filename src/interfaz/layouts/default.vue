@@ -2,7 +2,6 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
@@ -53,7 +52,6 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -76,9 +74,6 @@ export default {
           to: '/categorias'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
       title: 'Mis Gastos'
     }
   }
