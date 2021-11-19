@@ -55,6 +55,11 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail debe ser válido",
     ],
   }),
+  head() {
+    return {
+      title: "Iniciar Sesion",
+    };
+  },
   methods: {
     validate() {
       this.$refs.form.validate();

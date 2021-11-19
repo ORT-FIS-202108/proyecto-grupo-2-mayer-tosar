@@ -58,6 +58,11 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail debe ser válido",
     ],
   }),
+  head() {
+    return {
+      title: "Registo",
+    };
+  },
   methods: {
     validate() {
       this.$refs.form.validate();
