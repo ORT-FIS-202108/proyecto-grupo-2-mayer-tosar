@@ -1,11 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :clipped="clipped"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -23,17 +18,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="false"
-      fixed
-      app
-    >
+    <v-app-bar :clipped-left="false" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-      >
+      <v-btn icon to="/iniciar-sesion">
         <v-icon>mdi-logout</v-icon>
       </v-btn>
     </v-app-bar>
@@ -48,34 +37,34 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Inicio',
-          to: '/'
+          icon: "mdi-apps",
+          title: "Inicio",
+          to: "/",
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Cuentas',
-          to: '/cuentas'
+          icon: "mdi-chart-bubble",
+          title: "Cuentas",
+          to: "/cuentas",
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Objetivos',
-          to: '/objetivos'
+          icon: "mdi-chart-bubble",
+          title: "Objetivos",
+          to: "/objetivos",
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Categorias',
-          to: '/categorias'
-        }
+          icon: "mdi-chart-bubble",
+          title: "Categorias",
+          to: "/categorias",
+        },
       ],
-      title: 'Mis Gastos'
-    }
-  }
-}
+      title: "Mis Gastos",
+    };
+  },
+};
 </script>
