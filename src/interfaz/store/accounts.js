@@ -1,18 +1,5 @@
 export const state = () => ({
-  accounts: [
-    {
-      _id: 1,
-      name: "Cuenta 1",
-      amount: 1000,
-      currency: "UYU",
-    },
-    {
-      _id: 2,
-      name: "Cuenta 2",
-      amount: 6000,
-      currency: "USD",
-    },
-  ],
+  accounts: [],
   currencies: [
     { text: "UYU", value: "UYU" },
     { text: "USD", value: "USD" },
@@ -21,6 +8,12 @@ export const state = () => ({
     { text: "BRL", value: "BRL" },
   ],
 });
+
+export const mutations = {
+  SET_ACCOUNTS(state, accounts) {
+    state.accounts = accounts;
+  },
+};
 
 export const getters = {
   getAccountById: (state) => (id) => {
@@ -36,5 +29,38 @@ export const getters = {
   },
   getCurrencyAccountById: (state) => (id) => {
     return state.accounts.find((account) => account._id === id).currency;
+  },
+};
+
+export const actions = {
+  async GET_ACCOUNTS({ commit }) {
+    try {
+      const response = await this.$axios.get("/accounts");
+      commit("SET_ACCOUNTS", response.data.accounts);
+    } catch (error) {
+      throw new Error();
+    }
+  },
+  async CREATE_ACCOUNT({ commit }, account) {
+    try {
+      const response = await this.$axios.post("/accounts", account);
+      commit("SET_ACCOUNTS", response.data.accounts);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  },
+  async UPDATE_ACCOUNT({}, account) {
+    try {
+      await this.$axios.put(`/accounts/${account._id}`, account);
+    } catch (error) {
+      throw new Error();
+    }
+  },
+  async DELETE_ACCOUNT({}, id) {
+    try {
+      await this.$axios.delete(`/accounts/${id}`);
+    } catch (error) {
+      throw new Error();
+    }
   },
 };

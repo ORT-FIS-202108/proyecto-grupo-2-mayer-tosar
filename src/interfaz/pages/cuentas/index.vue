@@ -39,12 +39,9 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      date: new Date(),
-    };
+  fetch() {
+    this.$store.dispatch("accounts/GET_ACCOUNTS");
   },
-  mounted() {},
   computed: {
     ...mapState("accounts", ["accounts"]),
   },
