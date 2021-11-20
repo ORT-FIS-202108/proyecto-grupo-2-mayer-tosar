@@ -31,7 +31,7 @@
         <v-card-actions>
           <v-btn text to="/registro"> ¿No tienes usuario? </v-btn>
           <v-spacer></v-spacer>
-          <v-btn to="/"> Iniciar Sesion </v-btn>
+          <v-btn @click="validate"> Iniciar Sesion </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -40,6 +40,7 @@
 
 <script>
 export default {
+  auth: "guest",
   layout: "base",
   data: () => ({
     valid: false,
@@ -61,7 +62,21 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.userLogin();
+      }
+    },
+    async userLogin() {
+      try {
+        await this.$auth.loginWith("local", {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        });
+      } catch (error) {
+        this.$toast.error(error.response.data.message);
+      }
     },
   },
 };
