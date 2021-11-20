@@ -29,7 +29,7 @@
       <v-btn icon to="/perfil">
         <v-icon>mdi-account</v-icon>
       </v-btn>
-      <v-btn icon to="/iniciar-sesion">
+      <v-btn icon @click="logout">
         <v-icon>mdi-logout</v-icon>
       </v-btn>
     </v-app-bar>
@@ -137,6 +137,11 @@ export default {
       } else {
         return this.itemsMenuCommon;
       }
+    },
+  },
+  methods: {
+    async logout() {
+      await this.$auth.logout();
     },
   },
 };

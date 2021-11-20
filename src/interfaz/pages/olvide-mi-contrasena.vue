@@ -33,6 +33,7 @@
 
 <script>
 export default {
+  auth: "guest",
   layout: "base",
   data: () => ({
     valid: false,
