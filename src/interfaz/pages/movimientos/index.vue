@@ -4,22 +4,22 @@
       <v-card class="py-4">
         <v-row justify="center" align="center" class="text-center">
           <v-col cols="4">
-            <p>Gastos</p>
-            <strong>${{ totalExpenses }}</strong>
+            <v-btn @click="changeMonth(-1)">
+              <v-icon>mdi-arrow-left</v-icon>
+            </v-btn>
           </v-col>
           <v-col cols="4">
-            <p>Mes</p>
-            <strong class="text-uppercase">{{ getCurrentMonth }}</strong>
+            <strong class="text-uppercase">{{ getMonth }} {{ getYear }}</strong>
           </v-col>
           <v-col cols="4">
-            <p>Ingresos</p>
-            <strong>${{ totalIncomes }}</strong>
+            <v-btn @click="changeMonth(1)">
+              <v-icon>mdi-arrow-right</v-icon>
+            </v-btn>
           </v-col>
         </v-row>
         <v-divider class="my-4" />
-        <p class="px-4">Últimos Movimientos</p>
         <v-list>
-          <v-list-item v-for="(movement, idx) in lastestMovement" :key="idx">
+          <v-list-item v-for="(movement, idx) in movements" :key="idx">
             <v-list-item-avatar>
               <v-icon
                 dark
@@ -48,41 +48,53 @@
             </v-list-item-content>
 
             <v-list-item-action>
-              <p>${{ movement.amount }}</p>
+              <div class="d-flex justify-center align-center">
+                <p class="ma-0">${{ movement.amount }}</p>
+                <v-btn
+                  small
+                  class="ml-2"
+                  :to="{
+                    name: 'movimientos-editar-type-id',
+                    params: { type: movement.type, id: movement._id },
+                  }"
+                >
+                  <v-icon x-small>mdi-pencil</v-icon>
+                </v-btn>
+              </div>
             </v-list-item-action>
           </v-list-item>
         </v-list>
-        <div class="mx-4">
-          <v-btn block to="/movimientos">Ver todos los movimientos</v-btn>
-        </div>
-        <v-divider class="my-4" />
-        <div class="mx-4">
-          <v-btn class="my-4" to="/cuentas" block>Ver cuentas</v-btn>
-
-          <v-btn class="my-4" to="/objetivos" block>Ver Objetivos</v-btn>
-
-          <v-btn class="my-4" to="/balance-mensual" block
-            >Ver Balance Mensual</v-btn
-          >
-        </div>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
+  data() {
+    return {
+      date: new Date(),
+    };
+  },
+  mounted() {},
   computed: {
-    ...mapGetters("movements", ["lastestMovement"]),
-    ...mapState("movements", ["totalIncomes", "totalExpenses"]),
+    ...mapState("movements", ["movements"]),
     ...mapGetters("accounts", ["getAccountById"]),
     ...mapGetters("categories", ["getCategoryNameById"]),
-    getCurrentMonth() {
-      return new Date().toLocaleString("es", { month: "short" });
+    getMonth() {
+      return this.date.toLocaleString("es", {
+        month: "long",
+      });
+    },
+    getYear() {
+      return this.date.getFullYear();
     },
   },
   methods: {
+    changeMonth(value) {
+      this.date = new Date(this.date.setMonth(this.date.getMonth() + value));
+    },
     getIconByMovementType(type) {
       switch (type) {
         case "income":

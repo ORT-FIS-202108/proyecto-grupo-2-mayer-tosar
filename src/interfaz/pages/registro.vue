@@ -5,7 +5,6 @@
         <v-card-title>
           <v-layout align-center justify-space-between>
             <h3 class="headline">Registo</h3>
-            <h3 class="headline">Mis Gastos</h3>
           </v-layout>
         </v-card-title>
         <v-divider></v-divider>

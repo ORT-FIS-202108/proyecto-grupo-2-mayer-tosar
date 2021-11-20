@@ -5,7 +5,6 @@
         <v-card-title>
           <v-layout align-center justify-space-between>
             <h3 class="headline">Olvide mi contraseña</h3>
-            <h3 class="headline">Mis Gastos</h3>
           </v-layout>
         </v-card-title>
         <v-divider></v-divider>
@@ -24,7 +23,7 @@
           <v-btn text to="/iniciar-sesion"> Volver </v-btn>
           <v-spacer></v-spacer>
           <v-btn to="/iniciar-sesion"
-            ><v-icon left>mdi-email-outline</v-icon> Solicitar nueva contraseña
+            ><v-icon left>mdi-email-outline</v-icon> Solicitar contraseña
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -52,11 +51,6 @@ export default {
     return {
       title: "Olvide mi contraseña",
     };
-  },
-  methods: {
-    validate() {
-      this.$refs.form.validate();
-    },
   },
 };
 </script>
