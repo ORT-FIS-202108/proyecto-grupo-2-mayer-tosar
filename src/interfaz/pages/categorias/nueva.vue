@@ -21,7 +21,7 @@
             :rules="[(v) => !!v || 'El nombre es requerido']"
           ></v-text-field>
 
-          <v-btn block @click="validate()">Agregar Categoria</v-btn>
+          <v-btn block @click="validate()">Crear Categoria</v-btn>
         </v-form>
       </v-card>
     </v-col>
@@ -38,7 +38,20 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.createCategory();
+      }
+    },
+    async createCategory() {
+      const category = {
+        name: this.name,
+      };
+      try {
+        await this.$store.dispatch("categories/CREATE_CATEGORY", category);
+        this.$router.push({ name: "categorias" });
+      } catch (error) {
+        this.$toast.error(error);
+      }
     },
   },
 };

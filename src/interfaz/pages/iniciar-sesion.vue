@@ -68,12 +68,14 @@ export default {
     },
     async userLogin() {
       try {
-        await this.$auth.loginWith("local", {
+        const response = await this.$auth.loginWith("local", {
           data: {
             email: this.email,
             password: this.password,
           },
         });
+
+        await this.$auth.setUser(response.data);
       } catch (error) {
         this.$toast.error(error.response.data.message);
       }

@@ -38,6 +38,9 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  fetch() {
+    this.$store.dispatch("categories/GET_CATEGORIES");
+  },
   computed: {
     ...mapState("categories", ["categories"]),
   },

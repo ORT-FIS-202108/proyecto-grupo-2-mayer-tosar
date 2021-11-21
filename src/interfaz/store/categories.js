@@ -1,10 +1,12 @@
 export const state = () => ({
-  categories: [
-    { name: "Hogar", _id: 1 },
-    { name: "Comida", _id: 2 },
-    { name: "Transporte", _id: 3 },
-  ],
+  categories: [],
 });
+
+export const mutations = {
+  SET_CATEGORIES(state, categories) {
+    state.categories = categories;
+  },
+};
 
 export const getters = {
   getCategoryNameById: (state) => (id) => {
@@ -30,5 +32,37 @@ export const getters = {
           value: category._id,
         };
       });
+  },
+};
+
+export const actions = {
+  async GET_CATEGORIES({ commit }) {
+    try {
+      const response = await this.$axios.get("/categories");
+      commit("SET_CATEGORIES", response.data.categories);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  },
+  async CREATE_CATEGORY({}, category) {
+    try {
+      await this.$axios.post("/categories", category);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  },
+  async UPDATE_CATEGORY({}, category) {
+    try {
+      await this.$axios.put(`/categories/${category._id}`, category);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  },
+  async DELETE_CATEGORY({}, id) {
+    try {
+      await this.$axios.delete(`/categories/${id}`);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
   },
 };

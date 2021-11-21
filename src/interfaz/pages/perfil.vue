@@ -10,8 +10,8 @@
         <v-divider class="my-4" />
         <v-row class="pa-4">
           <v-col>
-            <p><strong>Nombre:</strong> Joaquin</p>
-            <p><strong>Email:</strong> joaquinemayer@gmail.com</p>
+            <p><strong>Nombre:</strong> {{ $auth.user.name }}</p>
+            <p><strong>Email:</strong> {{ $auth.user.email }}</p>
           </v-col>
         </v-row>
         <v-divider class="my-4" />
