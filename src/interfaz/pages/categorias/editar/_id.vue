@@ -23,6 +23,38 @@
 
           <v-btn block @click="validate()">Editar Categoria</v-btn>
         </v-form>
+        <v-divider />
+        <div class="mx-4 mt-4">
+          <v-dialog v-model="dialog" width="500">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="red" dark v-bind="attrs" v-on="on" block>
+                Eliminar Categoria
+              </v-btn>
+            </template>
+
+            <v-card dark>
+              <v-card-title class="text-h5 red">
+                Eliminar categoria
+              </v-card-title>
+
+              <v-card-text class="mt-5">
+                ¿Está seguro que quiere eliminar esta categoria?
+              </v-card-text>
+
+              <v-divider></v-divider>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" text @click="dialog = false">
+                  Cancelar
+                </v-btn>
+                <v-btn color="red" @click="deleteCategory">
+                  Eliminar Definitivamente
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
       </v-card>
     </v-col>
   </v-row>
@@ -35,18 +67,43 @@ export default {
     return {
       valid: false,
       name: null,
+      dialog: false,
     };
-  },
-  mounted() {
-    let category = this.getCategoryById(this.$route.params.id);
-    this.name = category.name;
   },
   computed: {
     ...mapGetters("categories", ["getCategoryById"]),
   },
+  fetch() {
+    const category = this.getCategoryById(this.$route.params.id);
+    this.name = category.name;
+  },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.updateCategory();
+      }
+    },
+    async updateCategory() {
+      try {
+        await this.$store.dispatch("categories/UPDATE_CATEGORY", {
+          _id: this.$route.params.id,
+          name: this.name,
+        });
+        this.$router.push({ name: "categorias" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
+    },
+    async deleteCategory() {
+      try {
+        await this.$store.dispatch(
+          "categories/DELETE_CATEGORY",
+          this.$route.params.id
+        );
+        this.$router.push({ name: "categorias" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
     },
   },
 };
