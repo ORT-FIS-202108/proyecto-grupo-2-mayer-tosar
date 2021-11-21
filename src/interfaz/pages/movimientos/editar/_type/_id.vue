@@ -53,8 +53,8 @@
           <v-divider />
           <v-select
             v-if="!isTransferType"
-            v-model="objectiveId"
-            :items="objectives"
+            v-model="goalId"
+            :items="goals"
             label="Objetivos"
             class="mt-4"
           ></v-select>
@@ -81,8 +81,8 @@ export default {
       accountId: null,
       accountTo: null,
       accountToId: null,
-      objectiveId: null,
-      objectives: [{ text: "Ninguno", value: null }],
+      goalId: null,
+      goals: [{ text: "Ninguno", value: null }],
     };
   },
   mounted() {
@@ -99,11 +99,11 @@ export default {
     } else {
       this.account = this.getAccountById(movement.accountId);
       this.accountId = this.account._id;
-      this.objectiveId = movement.objectiveId;
+      this.goalId = movement.goalId;
     }
-    this.objectives = [
-      ...this.objectives,
-      ...this.getObjectivesByCurrency(this.account.currency),
+    this.goals = [
+      ...this.goals,
+      ...this.getGoalsByCurrency(this.account.currency),
     ];
   },
   computed: {
@@ -113,7 +113,7 @@ export default {
       "getAccountById",
       "getCurrencyAccountById",
     ]),
-    ...mapGetters("objectives", ["getObjectivesByCurrency"]),
+    ...mapGetters("goals", ["getGoalsByCurrency"]),
     ...mapGetters("categories", ["getCategories"]),
     typeText() {
       switch (this.$route.params.type) {
@@ -134,9 +134,9 @@ export default {
   watch: {
     accountId(newVal) {
       let currency = this.getCurrencyAccountById(newVal);
-      this.objectives = [
+      this.goals = [
         { text: "Ninguno", value: null },
-        ...this.getObjectivesByCurrency(currency),
+        ...this.getGoalsByCurrency(currency),
       ];
     },
   },

@@ -9,14 +9,14 @@
         </v-row>
         <v-divider class="my-4" />
         <v-list>
-          <v-list-item v-for="(objective, idx) in objectives" :key="idx">
+          <v-list-item v-for="(goal, idx) in goals" :key="idx">
             <v-list-item-content>
-              <v-list-item-title>{{ objective.name }}</v-list-item-title>
+              <v-list-item-title>{{ goal.name }}</v-list-item-title>
               <v-list-item-subtitle>
-                <v-chip x-small>{{ objective.finalDate }}</v-chip>
+                <v-chip x-small>{{ convertDate(goal.date) }}</v-chip>
                 <v-chip x-small
-                  >{{ objective.currency
-                  }}{{ objective.objectiveAmount }}</v-chip
+                  >{{ goal.currency
+                  }}{{ convertAmount(goal.targetAmount) }}</v-chip
                 >
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -24,15 +24,14 @@
             <v-list-item-action>
               <div class="d-flex justify-center align-center">
                 <p class="ma-0">
-                  {{ objective.currency
-                  }}{{ getTotalByObjectiveId(objective._id) }}
+                  {{ goal.currency }}{{ convertAmount(goal.currentAmount) }}
                 </p>
                 <v-btn
                   small
                   class="ml-2"
                   :to="{
                     name: 'objetivos-depositos-id',
-                    params: { id: objective._id },
+                    params: { id: goal._id },
                   }"
                 >
                   <v-icon x-small>mdi-menu</v-icon>
@@ -42,7 +41,7 @@
                   class="ml-2"
                   :to="{
                     name: 'objetivos-editar-id',
-                    params: { id: objective._id },
+                    params: { id: goal._id },
                   }"
                 >
                   <v-icon x-small>mdi-pencil</v-icon>
@@ -57,17 +56,21 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      date: new Date(),
-    };
+  fetch() {
+    this.$store.dispatch("goals/GET_GOALS");
   },
-  mounted() {},
   computed: {
-    ...mapState("objectives", ["objectives"]),
-    ...mapGetters("movements", ["getTotalByObjectiveId"]),
+    ...mapState("goals", ["goals"]),
+  },
+  methods: {
+    convertDate(date) {
+      return new Date(date).toISOString().slice(0, 10).toLocaleLowerCase("es");
+    },
+    convertAmount(amount) {
+      return amount.toLocaleString("es-UY");
+    },
   },
 };
 </script>
