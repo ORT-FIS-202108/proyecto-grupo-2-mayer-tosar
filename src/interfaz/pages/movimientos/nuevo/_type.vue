@@ -29,6 +29,7 @@
           ></v-text-field>
           <v-text-field label="Fecha" type="date" v-model="date"></v-text-field>
           <v-select
+            v-if="!isTransferType"
             v-model="category"
             :items="getCategories"
             :rules="[(v) => !!v || 'La categoria es requerida']"
@@ -37,7 +38,7 @@
           ></v-select>
 
           <v-select
-            v-model="accountId"
+            v-model="account"
             :items="getAccounts"
             :rules="[(v) => !!v || 'La cuenta es requerida']"
             :label="isTransferType ? 'Desde la cuenta' : 'Cuenta'"
@@ -45,7 +46,7 @@
           ></v-select>
           <v-select
             v-if="isTransferType"
-            v-model="accountToId"
+            v-model="accountTo"
             :items="getAccounts"
             :rules="[(v) => !!v || 'La cuenta es requerida']"
             label="A la cuenta"
@@ -53,8 +54,8 @@
           <v-divider />
           <v-select
             v-if="!isTransferType"
-            v-model="objectiveId"
-            :items="objectives"
+            v-model="goal"
+            :items="goals"
             label="Objetivos"
             class="mt-4"
           ></v-select>
@@ -66,7 +67,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -75,15 +76,15 @@ export default {
       amount: 0,
       date: new Date(),
       category: null,
-      accountId: null,
-      accountToId: null,
-      objectiveId: null,
-      objectives: [{ text: "Ninguno", value: null }],
+      account: null,
+      accountTo: null,
+      goal: null,
+      goals: [{ text: "Ninguno", value: null }],
     };
   },
   computed: {
     ...mapGetters("accounts", ["getAccounts", "getCurrencyAccountById"]),
-    ...mapGetters("objectives", ["getObjectivesByCurrency"]),
+    ...mapGetters("goals", ["getGoalsByCurrency"]),
     ...mapGetters("categories", ["getCategories"]),
     typeText() {
       switch (this.$route.params.type) {
@@ -101,18 +102,58 @@ export default {
       return this.$route.params.type == "transfer";
     },
   },
+  fetch() {
+    this.$store.dispatch("categories/GET_CATEGORIES");
+    this.$store.dispatch("accounts/GET_ACCOUNTS");
+    this.$store.dispatch("goals/GET_GOALS");
+  },
   watch: {
     accountId(newVal) {
       let currency = this.getCurrencyAccountById(newVal);
-      this.objectives = [
+      this.goals = [
         { text: "Ninguno", value: null },
-        ...this.getObjectivesByCurrency(currency),
+        ...this.getGoalsByCurrency(currency),
       ];
     },
   },
   methods: {
     validate() {
       this.$refs.form.validate();
+      if (this.valid) {
+        this.createMovement();
+      }
+    },
+    async createMovement() {
+      let data = {
+        name: this.name,
+        amount: this.amount,
+        date: this.date,
+        type: this.$route.params.type,
+        account: this.account,
+      };
+
+      switch (this.$route.params.type) {
+        case "income":
+          data.category = this.category;
+          data.account = this.account;
+          data.goal = this.goal;
+          break;
+        case "expense":
+          data.category = this.category;
+          data.account = this.account;
+          data.goal = this.goal;
+          break;
+        case "transfer":
+          data.accountTo = this.accountTo;
+          break;
+      }
+
+      try {
+        await this.$store.dispatch("movements/CREATE_MOVEMENT", data);
+        this.$router.push({ name: "movimientos" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
     },
   },
 };

@@ -9,7 +9,16 @@
             </v-btn>
           </v-col>
           <v-col cols="4">
-            <strong class="text-uppercase">{{ getMonth }} {{ getYear }}</strong>
+            <strong class="text-uppercase"
+              >{{ getMonthText }} {{ getYear }}</strong
+            >
+            <br />
+            <v-btn
+              @click="resetDate()"
+              v-if="getMonth != currentMonth || getYear != currentYear"
+            >
+              Ir al mes actual
+            </v-btn>
           </v-col>
           <v-col cols="4">
             <v-btn @click="changeMonth(1)">
@@ -32,9 +41,9 @@
               <v-list-item-title v-text="movement.name"></v-list-item-title>
 
               <v-list-item-subtitle>
-                <v-chip x-small>{{ movement.date }}</v-chip>
+                <v-chip x-small>{{ convertDate(movement.date) }}</v-chip>
                 <v-chip x-small>{{
-                  getCategoryNameById(movement.categoryId)
+                  getCategoryNameById(movement.category)
                 }}</v-chip>
                 <v-chip x-small v-if="movement.type == 'transfer'"
                   >{{ getAccountById(movement.accountFromId).name }}
@@ -42,14 +51,17 @@
                   {{ getAccountById(movement.accountToId).name }}</v-chip
                 >
                 <v-chip x-small v-else>{{
-                  getAccountById(movement.accountId).name
+                  getNameAccountById(movement.account)
                 }}</v-chip>
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-action>
               <div class="d-flex justify-center align-center">
-                <p class="ma-0">${{ movement.amount }}</p>
+                <p class="ma-0">
+                  {{ getCurrencyAccountById(movement.account)
+                  }}{{ convertAmount(movement.amount) }}
+                </p>
                 <v-btn
                   small
                   class="ml-2"
@@ -75,23 +87,46 @@ export default {
   data() {
     return {
       date: new Date(),
+      currentMonth: new Date().getMonth(),
+      currentYear: new Date().getFullYear(),
     };
   },
-  mounted() {},
+  fetch() {
+    this.fetchMovements();
+    this.$store.dispatch("accounts/GET_ACCOUNTS");
+    this.$store.dispatch("categories/GET_CATEGORIES");
+  },
   computed: {
     ...mapState("movements", ["movements"]),
-    ...mapGetters("accounts", ["getAccountById"]),
+    ...mapGetters("accounts", ["getNameAccountById", "getCurrencyAccountById"]),
     ...mapGetters("categories", ["getCategoryNameById"]),
-    getMonth() {
+    getMonthText() {
       return this.date.toLocaleString("es", {
         month: "long",
       });
+    },
+    getMonth() {
+      return this.date.getMonth();
     },
     getYear() {
       return this.date.getFullYear();
     },
   },
+  watch: {
+    date() {
+      this.fetchMovements();
+    },
+  },
   methods: {
+    fetchMovements() {
+      this.$store.dispatch("movements/GET_MOVEMENTS_BY_MONTH_AND_YEAR", {
+        month: this.getMonth,
+        year: this.getYear,
+      });
+    },
+    resetDate() {
+      this.date = new Date();
+    },
     changeMonth(value) {
       this.date = new Date(this.date.setMonth(this.date.getMonth() + value));
     },
@@ -118,6 +153,12 @@ export default {
         default:
           return "";
       }
+    },
+    convertDate(date) {
+      return new Date(date).toISOString().slice(0, 10);
+    },
+    convertAmount(amount) {
+      return amount.toLocaleString("es-UY");
     },
   },
 };
