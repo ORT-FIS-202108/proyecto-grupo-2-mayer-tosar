@@ -10,7 +10,9 @@ export const mutations = {
 
 export const getters = {
   getCategoryNameById: (state) => (id) => {
-    return state.categories.find((category) => category._id === id).name;
+    return (
+      state.categories.find((category) => category._id === id)?.name || "N/D"
+    );
   },
   getCategories: (state) => {
     return state.categories.map((category) => {
