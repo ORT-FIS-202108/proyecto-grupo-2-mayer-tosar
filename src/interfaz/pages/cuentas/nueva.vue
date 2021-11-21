@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       valid: false,
-      name: "",
+      name: null,
       currency: "UYU",
       amount: 0,
     };

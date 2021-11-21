@@ -25,7 +25,7 @@
               <v-list-item v-for="(item, idx) in incomesByCategory" :key="idx">
                 <v-list-item-content>
                   <v-list-item-title
-                    v-text="getCategoryNameById(item.categoryId)"
+                    v-text="getCategoryNameById(item.category)"
                   ></v-list-item-title>
                 </v-list-item-content>
 
@@ -42,7 +42,7 @@
               <v-list-item v-for="(item, idx) in expensesByCategory" :key="idx">
                 <v-list-item-content>
                   <v-list-item-title
-                    v-text="getCategoryNameById(item.categoryId)"
+                    v-text="getCategoryNameById(item.category)"
                   ></v-list-item-title>
                 </v-list-item-content>
 

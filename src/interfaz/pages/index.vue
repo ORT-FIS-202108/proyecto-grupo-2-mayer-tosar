@@ -17,7 +17,7 @@
           </v-col>
         </v-row>
         <v-divider class="my-4" />
-        <p class="px-4">Últimos Movimientos</p>
+        <p class="px-4" v-if="lastestMovement.length">Últimos Movimientos</p>
         <v-list>
           <v-list-item v-for="(movement, idx) in lastestMovement" :key="idx">
             <v-list-item-avatar>
@@ -32,23 +32,26 @@
               <v-list-item-title v-text="movement.name"></v-list-item-title>
 
               <v-list-item-subtitle>
-                <v-chip x-small>{{ movement.date }}</v-chip>
+                <v-chip x-small>{{ convertDate(movement.date) }}</v-chip>
                 <v-chip x-small>{{
-                  getCategoryNameById(movement.categoryId)
+                  getCategoryNameById(movement.category)
                 }}</v-chip>
                 <v-chip x-small v-if="movement.type == 'transfer'"
-                  >{{ getAccountById(movement.accountFromId).name }}
+                  >{{ getAccountById(movement.accountFromId) }}
                   <v-icon x-small>mdi-arrow-right</v-icon>
-                  {{ getAccountById(movement.accountToId).name }}</v-chip
+                  {{ getAccountById(movement.accountToId) }}</v-chip
                 >
                 <v-chip x-small v-else>{{
-                  getAccountById(movement.accountId).name
+                  getNameAccountById(movement.account)
                 }}</v-chip>
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-action>
-              <p>${{ movement.amount }}</p>
+              <p>
+                {{ getCurrencyAccountById(movement.amount) }}
+                {{ convertAmount(movement.amount) }}
+              </p>
             </v-list-item-action>
           </v-list-item>
         </v-list>
@@ -76,14 +79,18 @@ export default {
   computed: {
     ...mapGetters("movements", ["lastestMovement"]),
     ...mapState("movements", ["totalIncomes", "totalExpenses"]),
-    ...mapGetters("accounts", ["getAccountById"]),
+    ...mapGetters("accounts", ["getNameAccountById", "getCurrencyAccountById"]),
     ...mapGetters("categories", ["getCategoryNameById"]),
     getCurrentMonth() {
       return new Date().toLocaleString("es", { month: "short" });
     },
   },
   fetch() {
+    this.$store.dispatch("movements/GET_MOVEMENTS");
+    this.$store.dispatch("movements/GET_TOTALS");
     this.$store.dispatch("accounts/GET_ACCOUNTS");
+    this.$store.dispatch("categories/GET_CATEGORIES");
+    this.$store.dispatch("goals/GET_GOALS");
   },
   methods: {
     getIconByMovementType(type) {
@@ -109,6 +116,12 @@ export default {
         default:
           return "";
       }
+    },
+    convertDate(date) {
+      return new Date(date).toISOString().slice(0, 10);
+    },
+    convertAmount(amount) {
+      return amount.toLocaleString("es-UY");
     },
   },
 };

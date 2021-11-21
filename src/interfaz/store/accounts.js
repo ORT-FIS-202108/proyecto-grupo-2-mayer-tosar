@@ -19,6 +19,9 @@ export const getters = {
   getAccountById: (state) => (id) => {
     return state.accounts.find((account) => account._id === id);
   },
+  getNameAccountById: (state) => (id) => {
+    return state.accounts.find((account) => account._id === id)?.name;
+  },
   getAccounts: (state) => {
     return state.accounts.map((account) => {
       return {
@@ -28,7 +31,7 @@ export const getters = {
     });
   },
   getCurrencyAccountById: (state) => (id) => {
-    return state.accounts.find((account) => account._id === id).currency;
+    return state.accounts.find((account) => account._id === id)?.currency;
   },
 };
 
@@ -38,13 +41,12 @@ export const actions = {
       const response = await this.$axios.get("/accounts");
       commit("SET_ACCOUNTS", response.data.accounts);
     } catch (error) {
-      throw new Error();
+      throw new Error(error.response.data.message);
     }
   },
-  async CREATE_ACCOUNT({ commit }, account) {
+  async CREATE_ACCOUNT({}, account) {
     try {
-      const response = await this.$axios.post("/accounts", account);
-      commit("SET_ACCOUNTS", response.data.accounts);
+      await this.$axios.post("/accounts", account);
     } catch (error) {
       throw new Error(error.response.data.message);
     }
@@ -53,14 +55,14 @@ export const actions = {
     try {
       await this.$axios.put(`/accounts/${account._id}`, account);
     } catch (error) {
-      throw new Error();
+      throw new Error(error.response.data.message);
     }
   },
   async DELETE_ACCOUNT({}, id) {
     try {
       await this.$axios.delete(`/accounts/${id}`);
     } catch (error) {
-      throw new Error();
+      throw new Error(error.response.data.message);
     }
   },
 };
