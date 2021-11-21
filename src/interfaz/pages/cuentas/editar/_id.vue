@@ -57,7 +57,7 @@
                 <v-btn color="primary" text @click="dialog = false">
                   Cancelar
                 </v-btn>
-                <v-btn color="red" @click="dialog = false">
+                <v-btn color="red" @click="deleteAccount">
                   Eliminar Definitivamente
                 </v-btn>
               </v-card-actions>
@@ -93,7 +93,33 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.updateAccount();
+      }
+    },
+    async updateAccount() {
+      try {
+        await this.$store.dispatch("accounts/UPDATE_ACCOUNT", {
+          _id: this.$route.params.id,
+          name: this.name,
+          currency: this.currency,
+          amount: this.amount,
+        });
+        this.$router.push({ name: "cuentas" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
+    },
+    async deleteAccount() {
+      try {
+        await this.$store.dispatch(
+          "accounts/DELETE_ACCOUNT",
+          this.$route.params.id
+        );
+        this.$router.push({ name: "cuentas" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
     },
   },
 };

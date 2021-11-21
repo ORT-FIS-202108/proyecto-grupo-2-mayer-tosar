@@ -82,6 +82,9 @@ export default {
       return new Date().toLocaleString("es", { month: "short" });
     },
   },
+  fetch() {
+    this.$store.dispatch("accounts/GET_ACCOUNTS");
+  },
   methods: {
     getIconByMovementType(type) {
       switch (type) {

@@ -55,7 +55,22 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.creacteAccount();
+      }
+    },
+    async creacteAccount() {
+      const account = {
+        name: this.name,
+        currency: this.currency,
+        amount: this.amount,
+      };
+      try {
+        await this.$store.dispatch("accounts/CREATE_ACCOUNT", account);
+        this.$router.push({ name: "cuentas" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
     },
   },
 };
