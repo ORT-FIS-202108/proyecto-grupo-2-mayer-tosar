@@ -30,7 +30,7 @@
           <v-text-field
             label="Monto Objetivo"
             type="number"
-            v-model="objectiveAmount"
+            v-model="targetAmount"
             required
             :rules="[(v) => !!v || 'El monto es requerido']"
           ></v-text-field>
@@ -54,9 +54,9 @@ export default {
   data() {
     return {
       valid: false,
-      name: "",
+      name: null,
       currency: "UYU",
-      objectiveAmount: 0,
+      targetAmount: 0,
       date: null,
     };
   },
@@ -65,7 +65,23 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.createGoal();
+      }
+    },
+    async createGoal() {
+      const goal = {
+        name: this.name,
+        currency: this.currency,
+        targetAmount: this.targetAmount,
+        date: this.date,
+      };
+      try {
+        await this.$store.dispatch("goals/CREATE_GOAL", goal);
+        this.$router.push({ name: "objetivos" });
+      } catch (error) {
+        this.$toast.error(error);
+      }
     },
   },
 };

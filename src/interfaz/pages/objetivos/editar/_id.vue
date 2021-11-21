@@ -30,7 +30,7 @@
           <v-text-field
             label="Monto Objetivo"
             type="number"
-            v-model="objectiveAmount"
+            v-model="targetAmount"
             :rules="[(v) => !!v || 'El monto es requerido']"
             required
           ></v-text-field>
@@ -43,6 +43,38 @@
           ></v-text-field>
           <v-btn block @click="validate()">Editar Objetivo</v-btn>
         </v-form>
+        <v-divider />
+        <div class="mx-4 mt-4">
+          <v-dialog v-model="dialog" width="500">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="red" dark v-bind="attrs" v-on="on" block>
+                Eliminar Objetivo
+              </v-btn>
+            </template>
+
+            <v-card dark>
+              <v-card-title class="text-h5 red">
+                Eliminar objetivo
+              </v-card-title>
+
+              <v-card-text class="mt-5">
+                ¿Está seguro que quiere eliminar este objetivo?
+              </v-card-text>
+
+              <v-divider></v-divider>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" text @click="dialog = false">
+                  Cancelar
+                </v-btn>
+                <v-btn color="red" @click="deleteGoal">
+                  Eliminar Definitivamente
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
       </v-card>
     </v-col>
   </v-row>
@@ -54,26 +86,56 @@ export default {
   data() {
     return {
       valid: false,
-      name: "",
+      name: null,
       currency: "UYU",
-      objectiveAmount: 0,
+      targetAmount: 0,
       date: null,
+      dialog: false,
     };
   },
   computed: {
     ...mapState("accounts", ["currencies"]),
-    ...mapGetters("objectives", ["getObjectiveById"]),
+    ...mapGetters("goals", ["getGoalById"]),
   },
-  mounted() {
-    this.objectiveId = this.getObjectiveById(this.$route.params.id);
-    this.name = this.objectiveId.name;
-    this.currency = this.objectiveId.currency;
-    this.objectiveAmount = this.objectiveId.objectiveAmount;
-    this.date = this.objectiveId.finalDate;
+  fetch() {
+    const goal = this.getGoalById(this.$route.params.id);
+    this.name = goal.name;
+    this.currency = goal.currency;
+    this.targetAmount = goal.targetAmount;
+    this.date = this.convertDate(goal.date);
   },
   methods: {
     validate() {
-      this.$refs.form.validate();
+      if (this.$refs.form.validate()) {
+        this.updateGoal();
+      }
+    },
+    convertDate(date) {
+      return new Date(date).toISOString().slice(0, 10);
+    },
+    async updateGoal() {
+      const goal = {
+        id: this.$route.params.id,
+        name: this.name,
+        currency: this.currency,
+        targetAmount: this.targetAmount,
+        date: this.date,
+      };
+
+      try {
+        await this.$store.dispatch("goals/UPDATE_GOAL", goal);
+        this.$router.push({ name: "objetivos" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
+    },
+    async deleteGoal() {
+      try {
+        await this.$store.dispatch("goals/DELETE_GOAL", this.$route.params.id);
+        this.$router.push({ name: "objetivos" });
+      } catch (error) {
+        this.$toast.error(error.message);
+      }
     },
   },
 };

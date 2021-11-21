@@ -111,7 +111,7 @@ export default {
           to: "/cuentas/nueva",
         },
       ],
-      itemsMenuObjective: [
+      itemsMenuGoal: [
         {
           title: "Agregar Objetivo",
           to: "/objetivos/nuevo",
@@ -131,7 +131,7 @@ export default {
       if (this.$route.path.includes("/cuentas")) {
         return this.itemsMenuAccount;
       } else if (this.$route.path.includes("/objetivos")) {
-        return this.itemsMenuObjective;
+        return this.itemsMenuGoal;
       } else if (this.$route.path.includes("/categorias")) {
         return this.itemsMenuCategory;
       } else {

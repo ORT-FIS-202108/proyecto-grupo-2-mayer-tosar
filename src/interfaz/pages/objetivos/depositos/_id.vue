@@ -66,14 +66,17 @@ export default {
       movements: [],
     };
   },
-  mounted() {
-    let objetive = this.getObjectiveById(this.$route.params.id);
-    this.name = objetive.name;
-    this.movements = this.getMovementsByObjectiveId(this.$route.params.id);
+  async fetch() {
+    const goal = this.getGoalById(this.$route.params.id);
+    this.name = goal.name;
+    try {
+      await this.$store.dispatch("goals/GET_MOVEMENTS_BY_GOAL", goal._id);
+    } catch (error) {
+      this.$toast.error(error.message);
+    }
   },
   computed: {
-    ...mapGetters("objectives", ["getObjectiveById"]),
-    ...mapGetters("movements", ["getMovementsByObjectiveId"]),
+    ...mapGetters("goals", ["getGoalById"]),
     ...mapGetters("accounts", ["getAccountById"]),
   },
   methods: {
