@@ -7,6 +7,7 @@ import userRouter from "./routers/userRouter.js";
 import accountRouter from "./routers/accountRouter.js";
 import incomeRouter from "./routers/incomeRouter.js";
 import expenseRouter from "./routers/expenseRouter.js";
+import categoryRouter from "./routers/categoryRouter.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/api/users", userRouter);
 app.use("/api/account", accountRouter);
 app.use("/api/income", incomeRouter);
 app.use("/api/expense", expenseRouter);
+app.use("/api/category", categoryRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
