@@ -6,6 +6,7 @@ import cors from "cors";
 import userRouter from "./routers/userRouter.js";
 import accountRouter from "./routers/accountRouter.js";
 import incomeRouter from "./routers/incomeRouter.js";
+import expenseRouter from "./routers/expenseRouter.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/mis-gastos", {
 app.use("/api/users", userRouter);
 app.use("/api/account", accountRouter);
 app.use("/api/income", incomeRouter);
+app.use("/api/expense", expenseRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
