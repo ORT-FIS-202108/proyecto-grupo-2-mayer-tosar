@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules server.js"
+    "start": "node server.js",
+    "develop": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
