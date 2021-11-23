@@ -3,6 +3,7 @@
     <v-flex sm12 md6 offset-md3>
       <v-card elevation="4" tag="section">
         <v-card-title>
+          <img src="/mis-gastos.png" alt="logo mis gastos" />
           <v-layout align-center justify-space-between>
             <h3 class="headline">Iniciar Sesion</h3>
           </v-layout>
