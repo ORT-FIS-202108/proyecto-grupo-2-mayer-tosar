@@ -108,7 +108,7 @@ export default {
     this.$store.dispatch("goals/GET_GOALS");
   },
   watch: {
-    accountId(newVal) {
+    account(newVal) {
       let currency = this.getCurrencyAccountById(newVal);
       this.goals = [
         { text: "Ninguno", value: null },
