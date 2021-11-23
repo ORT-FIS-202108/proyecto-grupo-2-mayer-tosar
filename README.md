@@ -25,3 +25,8 @@ Los informes académicos para cada entrega se realizan en los archivos README.md
 * [Informe entrega 2](src/README.md)
 
 
+Los links de la web app son:
+
+
+Frontend: https://mis-gastos-ort.netlify.app/
+Backend: https://mis-gastos-fis.herokuapp.com/

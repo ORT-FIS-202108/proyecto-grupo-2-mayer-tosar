@@ -1,15 +1,27 @@
 {
-  "name": "cartelera",
+  "name": "mis-gastos",
+  "type": "module",
   "version": "1.0.0",
-  "description": "Ejemplo de modelo dominio Cartelera",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+    "start": "node server.js",
+    "develop": "nodemon server.js"
   },
-  "author": "FIS",
-  "license": "",
-  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.7"
+  },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.21.2",
+    "nodemon": "^2.0.4"
   }
 }

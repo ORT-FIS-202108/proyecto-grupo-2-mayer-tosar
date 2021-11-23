@@ -1,0 +1,597 @@
+{
+	"variables": [],
+	"info": {
+		"name": "mis-gastos",
+		"_postman_id": "5acb678f-afb2-10e5-f9c0-c9d24bc9f3d4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"url": "localhost:5000/api/users/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"test\",\n\t\"email\": \"test@test.com\",\n\t\"password\": \"test1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Signin User",
+					"request": {
+						"url": "localhost:5000/api/users/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTZkZTRkZWMxZTNkMjgzZmE0ZDU5NSIsInVzZXJuYW1lIjoidGVzdCIsImV4cCI6MTY0MjQ2MTI2MSwiaWF0IjoxNjM3Mjc3MjYxfQ.fOV3BjE73usjnSpPXhPA_BhQtXDnJyjtZBGrkWA82o4",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"test1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read User (by id)",
+					"request": {
+						"url": "localhost:5000/api/users/61978a2755e07de6fc5ecaf0",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": \n\t{\n\t\t\"email\": \"test@test.com\",\n\t\t\"password\": \"test12345\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"url": "localhost:5000/api/users/61978a2755e07de6fc5ecaf0",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"test 2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"url": "localhost:5000/api/accounts",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCAyIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzNzUwMDU1MiwiZXhwIjoxNjQwMDkyNTUyfQ.ABdaaZvE3s2FjLqIgONYy7xOefiZomPDDYl6vyKNvLk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"account 1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Accounts",
+					"request": {
+						"url": "localhost:5000/api/accounts/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"url": "localhost:5000/api/accounts/619793f7d5f690e7ff443a08",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"account 2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Account (by id)",
+					"request": {
+						"url": "localhost:5000/api/accounts/619793f7d5f690e7ff443a08",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"url": "localhost:5000/api/accounts/transfer",
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCAyIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzNzUwMDU1MiwiZXhwIjoxNjQwMDkyNTUyfQ.ABdaaZvE3s2FjLqIgONYy7xOefiZomPDDYl6vyKNvLk",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fromName\": \"account 1\",\n\t\"toName\": \"account 2\",\n\t\"date\": \"28-10-2021\",\n\t\"amount\": 100\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Income",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Income",
+					"request": {
+						"url": "localhost:5000/api/income",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": \"100\",\n\t\"date\": \"20-11-21\",\n\t\"title\": \"primer ingreso\",\n\t\"account\": \"6197a71d28a9d1eca947060e\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Income",
+					"request": {
+						"url": {
+							"raw": "localhost:5000/api/income?author=61978a2755e07de6fc5ecaf0&account=6197a71d28a9d1eca947060e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"income"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "61978a2755e07de6fc5ecaf0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "account",
+									"value": "6197a71d28a9d1eca947060e",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Income (by id)",
+					"request": {
+						"url": "localhost:5000/api/income/6197a73428a9d1eca9470610",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Income",
+					"request": {
+						"url": "localhost:5000/api/income/6197a73428a9d1eca9470610",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Ingreso modificado\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Expense",
+					"request": {
+						"url": "localhost:5000/api/expense",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": \"50\",\n\t\"date\": \"20-11-21\",\n\t\"title\": \"primer ingreso\",\n\t\"account\": \"6197a71d28a9d1eca947060e\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expense",
+					"request": {
+						"url": {
+							"raw": "localhost:5000/api/expense?author=61978a2755e07de6fc5ecaf0&account=6197a71d28a9d1eca947060e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"expense"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "61978a2755e07de6fc5ecaf0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "account",
+									"value": "6197a71d28a9d1eca947060e",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expense (by id)",
+					"request": {
+						"url": "localhost:5000/api/expense/6197b0c4cc40d0f136a01258",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expense",
+					"request": {
+						"url": "localhost:5000/api/expense/6197b0c4cc40d0f136a01258",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Gasto modificado\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"url": "localhost:5000/api/category",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Home\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Categories",
+					"request": {
+						"url": "localhost:5000/api/category",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Category (by id)",
+					"request": {
+						"url": "localhost:5000/api/category/619915c690ec0ff8d54a946e",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"url": "localhost:5000/api/category/619915c690ec0ff8d54a946e",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Work\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Goal",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Goal",
+					"request": {
+						"url": "localhost:5000/api/goal",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Comprar computadora\",\n\t\"currency\": \"USD\",\n\t\"targetAmount\": \"2500\",\n\t\"date\": \"28-10-2022\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Goals",
+					"request": {
+						"url": {
+							"raw": "localhost:5000/api/goal?author=61978a2755e07de6fc5ecaf0",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"goal"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "61978a2755e07de6fc5ecaf0",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Read Goal (by id)",
+					"request": {
+						"url": "localhost:5000/api/goal/61991b1bc4aa88fb506cf23d",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Goal",
+					"request": {
+						"url": "localhost:5000/api/goal/61991b1bc4aa88fb506cf23d",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTk3OGEyNzU1ZTA3ZGU2ZmM1ZWNhZjAiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMyMTg0MSwiZXhwIjoxNjM5OTEzODQxfQ.pgNWy4kxeHrWtPP_vNHiEKRLG3byLDxNHgExvVpvT_k",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"currency\": \"UYU\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
