@@ -24,11 +24,12 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/mis-gastos", {
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
 app.use("/api/users", userRouter);
-app.use("/api/account", accountRouter);
+app.use("/api/accounts", accountRouter);
 app.use("/api/income", incomeRouter);
 app.use("/api/expense", expenseRouter);
-app.use("/api/category", categoryRouter);
+app.use("/api/categories", categoryRouter);
 app.use("/api/goals", goalRouter);
 
 app.use((err, req, res, next) => {
