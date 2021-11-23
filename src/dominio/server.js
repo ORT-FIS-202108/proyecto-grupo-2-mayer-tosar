@@ -9,6 +9,7 @@ import incomeRouter from "./routers/incomeRouter.js";
 import expenseRouter from "./routers/expenseRouter.js";
 import categoryRouter from "./routers/categoryRouter.js";
 import goalRouter from "./routers/goalRouter.js";
+import movementRouter from "./routers/movementsRouter.js";
 
 dotenv.config();
 
@@ -26,11 +27,13 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/mis-gastos", {
 });
 
 app.use("/api/users", userRouter);
-app.use("/api/account", accountRouter);
+app.use("/api/accounts", accountRouter);
 app.use("/api/income", incomeRouter);
 app.use("/api/expense", expenseRouter);
-app.use("/api/category", categoryRouter);
+app.use("/api/categories", categoryRouter);
 app.use("/api/goals", goalRouter);
+app.use("/api/movements", movementRouter);
+
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

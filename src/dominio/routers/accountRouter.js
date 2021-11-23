@@ -59,35 +59,29 @@ accountRouter.post(
   "/transfer",
   expressAsyncHandler(async (req, res) => {
     const user = req.user;
+    const name = req.body.name;
 
-    const fromAccount = await Account.findOne({
-      user: user._id,
-      name: req.body.fromName,
-    });
+    const account = await Account.findById(req.body.account);
+    const accountTo = await Account.findById(req.body.accountTo);
 
-    const toAccount = await Account.findOne({
-      user: user._id,
-      name: req.body.toName,
-    });
-
-    if (!fromAccount) {
+    if (!account) {
       res.status(400).send({ message: "From account not exists" });
-    } else if (!toAccount) {
+    } else if (!accountTo) {
       res.status(400).send({ message: "To account not exists" });
     } else {
-      fromAccount.amount -= req.body.amount;
-      toAccount.amount += req.body.amount;
+      account.amount -= parseInt(req.body.amount);
+      accountTo.amount += parseInt(req.body.amount);
 
-      await fromAccount.save();
-      await toAccount.save();
+      await account.save();
+      await accountTo.save();
 
       const newTransfer = new Transfer({
+        name,
         amount: req.body.amount,
-        currency: req.body.currency,
         date: req.body.date,
-        from: fromAccount._id,
-        to: toAccount._id,
-        user: user._id
+        from: account._id,
+        to: accountTo._id,
+        user: user._id,
       });
 
       const savedTransfer = await newTransfer.save();

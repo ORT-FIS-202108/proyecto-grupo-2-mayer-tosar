@@ -14,6 +14,7 @@ goalRouter.get(
   expressAsyncHandler(async (req, res) => {
     const user = req.user;
     const goals = await Goal.find({ user: user._id });
+
     res.json({ goals });
   })
 );
@@ -22,8 +23,9 @@ goalRouter.get(
   "/:id",
   expressAsyncHandler(async (req, res) => {
     const goal = await Goal.findById(req.params.id).populate();
+
     if (goal) {
-      res.send(goal);
+      res.send({ goal, totalGoal });
     } else {
       res.status(404).send({ message: "Goal Not Found" });
     }
