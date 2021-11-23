@@ -30,7 +30,7 @@
                 <v-chip x-small>{{ movement.date }}</v-chip>
                 <v-chip x-small>{{ movement.category }}</v-chip>
                 <v-chip x-small>{{
-                  getAccountById(movement.accountId).name
+                  getAccountById(movement.accountId)
                 }}</v-chip>
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -58,12 +58,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   data() {
     return {
       name: "",
-      movements: [],
     };
   },
   async fetch() {
@@ -78,6 +77,7 @@ export default {
   computed: {
     ...mapGetters("goals", ["getGoalById"]),
     ...mapGetters("accounts", ["getAccountById"]),
+    ...mapState("goals", ["movements"]),
   },
   methods: {
     getIconByMovementType(type) {

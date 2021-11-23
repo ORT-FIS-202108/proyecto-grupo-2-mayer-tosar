@@ -46,17 +46,9 @@ export const actions = {
   GET_MOVEMENTS({ commit }) {
     return this.$axios.get("/movements").then((response) => {
       commit("SET_MOVEMENTS", response.data.movements);
+      commit("SET_TOTAL_INCOMES", response.data.totalIncomes);
+      commit("SET_TOTAL_EXPENSES", response.data.totalExpenses);
     });
-  },
-  async GET_TOTALS({ commit }) {
-    try {
-      const responseExpenses = await this.$axios.get("/expense");
-      const responseIncomes = await this.$axios.get("/income");
-      commit("SET_TOTAL_EXPENSES", responseExpenses.data.totalExpenses);
-      commit("SET_TOTAL_INCOMES", responseIncomes.data.totalIncomes);
-    } catch (error) {
-      throw new Error(error.response.data.message);
-    }
   },
   GET_MOVEMENTS_BY_MONTH_AND_YEAR({ commit }, { month, year }) {
     return this.$axios
@@ -78,7 +70,7 @@ export const actions = {
         movementUrl = "/expense";
         break;
       case "transfer":
-        movementUrl = "/transfer";
+        movementUrl = "/accounts/transfer";
         break;
     }
 

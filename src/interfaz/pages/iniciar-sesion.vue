@@ -23,9 +23,6 @@
               v-model="password"
             ></v-text-field>
           </v-form>
-          <nuxt-link to="/olvide-mi-contrasena"
-            >¿Olvidaste tu contraseña?</nuxt-link
-          >
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>

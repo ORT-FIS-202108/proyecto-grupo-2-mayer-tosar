@@ -6,6 +6,8 @@
           <v-col cols="4">
             <p>Gastos</p>
             <strong>${{ totalExpenses }}</strong>
+            <br />
+            <small>SOLO EN UYU</small>
           </v-col>
           <v-col cols="4">
             <p>Mes</p>
@@ -14,6 +16,8 @@
           <v-col cols="4">
             <p>Ingresos</p>
             <strong>${{ totalIncomes }}</strong>
+            <br />
+            <small>SOLO EN UYU</small>
           </v-col>
         </v-row>
         <v-divider class="my-4" />
@@ -37,9 +41,9 @@
                   getCategoryNameById(movement.category)
                 }}</v-chip>
                 <v-chip x-small v-if="movement.type == 'transfer'"
-                  >{{ getAccountById(movement.accountFromId) }}
+                  >{{ getNameAccountById(movement.accountFromId) }}
                   <v-icon x-small>mdi-arrow-right</v-icon>
-                  {{ getAccountById(movement.accountToId) }}</v-chip
+                  {{ getNameAccountById(movement.accountToId) }}</v-chip
                 >
                 <v-chip x-small v-else>{{
                   getNameAccountById(movement.account)
@@ -49,7 +53,7 @@
 
             <v-list-item-action>
               <p>
-                {{ getCurrencyAccountById(movement.amount) }}
+                {{ getCurrencyAccountById(movement.account._id) }}
                 {{ convertAmount(movement.amount) }}
               </p>
             </v-list-item-action>
@@ -63,10 +67,6 @@
           <v-btn class="my-4" to="/cuentas" block>Ver cuentas</v-btn>
 
           <v-btn class="my-4" to="/objetivos" block>Ver Objetivos</v-btn>
-
-          <v-btn class="my-4" to="/balance-mensual" block
-            >Ver Balance Mensual</v-btn
-          >
         </div>
       </v-card>
     </v-col>
@@ -87,7 +87,6 @@ export default {
   },
   fetch() {
     this.$store.dispatch("movements/GET_MOVEMENTS");
-    this.$store.dispatch("movements/GET_TOTALS");
     this.$store.dispatch("accounts/GET_ACCOUNTS");
     this.$store.dispatch("categories/GET_CATEGORIES");
     this.$store.dispatch("goals/GET_GOALS");

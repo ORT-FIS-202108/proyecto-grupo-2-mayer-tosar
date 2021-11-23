@@ -30,16 +30,6 @@
                   small
                   class="ml-2"
                   :to="{
-                    name: 'objetivos-depositos-id',
-                    params: { id: goal._id },
-                  }"
-                >
-                  <v-icon x-small>mdi-menu</v-icon>
-                </v-btn>
-                <v-btn
-                  small
-                  class="ml-2"
-                  :to="{
                     name: 'objetivos-editar-id',
                     params: { id: goal._id },
                   }"
