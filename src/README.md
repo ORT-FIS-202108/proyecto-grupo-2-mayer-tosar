@@ -66,12 +66,12 @@ El entorno de producción se puede encontrar en:
 | Librería                  | Uso |
 |---------------------------|-----|
 | cors                      | Es un package que permite hablitar determinadas configuraciones de CORS  | 
-| dotenv                    | Es un package que permite cargar variables de entorno desde el codigo  |
+| dotenv                    | Es un package que permite cargar variables de entorno desde el código  |
 | express                   | Es un framework para estructurar el proyecto en node  |
 | express-async-handler     | Es un package que permite manejar excepciones en las rutas de express  |
 | jsonwebtoken              | Es un package que permite generar un token asociado a cada usuario, al loguearse o registrarse  |
-| mongoose                  | Es un package que permite realizar la conexion, lectura y escritura a una base de datos de mongo|
-| bcryptjs                  | Es un package que permite la encriptacion para las contraseñas |
+| mongoose                  | Es un package que permite realizar la conexión, lectura y escritura a una base de datos de mongo|
+| bcryptjs                  | Es un package que permite la encriptación para las contraseñas |
 
 <hr>
 
@@ -162,17 +162,14 @@ Detallar sesiones de prueba exploratoria
 
 ## Reporte de issues
 
-Reportar issues (bugs, improvements, missing features) en GitHub 
+Para realizar el reporte de issues utilizamos la herramienta issues de github la cual nos permitió generar un flujo muy dinamico entre la creación de user stories que habiamos realizado en la primera etapa y nuevas tareas para la asignación de las mismas a los colaboradores.
 
-Aplicar buenas prácticas de reporte de issues
+Dentro de esta herramienta dividimos el flujo en tres columnas, To Do, In progress, Done, y etiquetamos las tareas con los correspondientes labels para tener una información general de cada tarea. A algunas de estas tareas se les asignó el branch correspondiente si era necesario crear una rama para la misma.
 
-Definir labels para tipos de issue y niveles de severidad
+En total fueron generados 20 isssues en los cuales quedaron 2 para realizar en una siguiente etapa.
+Cabe destacar que la mayoría de los incidentes tienen funcionalidades que estan contempladas verticalmente, esto significa que no fue dividida cada funcionalidad por frontend y backend, sino que dichas funcionalidades fueron pensadas para que los colaboradores cumplieran un rol mas orientado a full stack.
 
-Dejar issues abiertos para correcciones o mejoras futuras
-
-Sumarizar número de issues reportados por tipo
-
-Realizar una evaluación global de la calidad
+Tablero de issues: https://github.com/ORT-FIS-202108/proyecto-grupo-2-mayer-tosar/projects/1
 
 ## Reflexión
 
