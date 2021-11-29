@@ -34,4 +34,5 @@ cd interfaz
 npm run start
 ```
 
-Abrir en el navegador `localhost:8080`.
+Abrir en el navegador `http://localhost:3000`.
+El backend por defecto corre en 'http://localhost:5000'
