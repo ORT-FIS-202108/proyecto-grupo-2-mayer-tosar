@@ -145,11 +145,11 @@ Buenas prácticas de OOP: separación de lógica e interfaz
 
 ## Test de sistema
 
-Realizar test de sistema en un entorno separado del desarrollo
+Para realizar las prubas del sistema se tuvo en cuenta la integracion de componentes como crear una cuenta, crear un objetivo, crear una categoria, crear un ingreso para la cuenta creada, que a su vez tuviese una categoria y estuviese asociada a un objetivo.
 
-Generar casos de prueba aplicando técnica partición equivalente
+Durante las pruebas los componentes desarrollados por separado pudieron integrarse al sistema, persistiendo la informacion correspondiente, demostrando que la integracion del cliente y servidor se comunican correctamente y permiten que el sistema funcione de foma integral.
 
-Detallar sesiones de prueba exploratoria
+Video con test de sistema integral: https://youtu.be/Nl8cKNEcoxY
 
 ## Reporte de issues
 
