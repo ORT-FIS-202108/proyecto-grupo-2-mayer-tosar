@@ -225,4 +225,14 @@ A su vez, logré constatar la importancia de detallar las User Stories, también
 
 Aunque no se pudo hacer las pruebas unitarias, estoy más predisupesto a implementarla en los proyectos que integro ya que perimite que el equipo de trabajo pueda verificar que el código está funcionando correctamente y evitar errores que pueden ocurrir y que pueden ser muy difíciles de detectar.
 
-Técnicas aplicadas y aprendizajes
+### Técnicas aplicadas y aprendizajes
+
+_Técnicas aplicadas_
+
+* Pair Programming: Para la realizacion de la integracion del backend (dominio) y el frontend (interfaz), usamos la tecnica de pair programing para avanzar más rapido con la integración de ambos
+
+* CI/CD: Continuous integration (CI) y continuous delivery (CD), aplicamos esta practica para la realizacion de los deploys, configurando el repositorio en las plataformas de Netlify y Heroku para la creacion de los ambientes de produccion y testing, nos permito ver los cambios de forma rapida, ya que al hacer cambios a las ramas de main o staging, automaticamente se realizaba un deploy y a los minutos ya podiamos ver los nuevos cambios en estos entornos.
+
+_Aprendizajes_
+
+Fue un excelente desafio para aplicar las mejores tecnicas, practicas y estandares que son utilizados en las empresas de software modernas. Nos logro dar una perspectiva más amplia de cómo se crea un proyecto desde cero y como se lleva a cabo todas las etapas del mismo. Realmente creemos que es una materia muy importante para la carrera porque te brinda todas las herramientas necesarias para insertarte en el mercado del desarrollo de sofware.  
