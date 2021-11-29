@@ -178,6 +178,22 @@ Realizar una evaluación global de la calidad
 
 ## Reflexión
 
-Detalle del trabajo individual
+### Detalle del trabajo individual
+
+_Reflexión Agustín_
+
+Cuando nos planteamos en la primera etapa el alcance que le queríamos dar al proyecto sabíamos que éramos ambiciosos al querer implementar los features de cuentas, objetivos y categorías. Esto, sumado a la persistencia de datos a través de mongo, en el plazo que teníamos fue un gran desafío. 
+ 
+Elegimos este camino por esto mismo, nos gusta sentirnos desafiados y siempre apostar a más. Pero apostar a ir más lejos también tuvo consecuencias, un ejemplo es no haber llegado a realizar a tiempo los tests unitarios con Jest, o también habernos salido un poco de alguno de los puntos que se planteaban en el obligatorio, ya que eran contrapuestos a la arquitectura que usamos. 
+ 
+De todos modos considero que cumplimos con el objetivo que teníamos cuando comenzamos a pensar el sistema, que fue hacer un producto no sólo tuviese las funcionalidades básicas sino que también tenga un valor agregado. Quizás aprendimos en el proceso que la documentación y las pruebas llevan más tiempo de lo que estimamos, pero también me llevo como reflexión que con Joaquin nuevamente formamos un gran equipo y supimos superar nuestras propias expectativas.
+
+_Rexlexión Joaquin_
+
+En mi caso, lo que me correspondia realizar era la parte del cliente o frontend, en general fue una tarea sencilla porque ya me dedico al desarrollo de frontend, pero igualmente tuve un desafio porque no hay una correcta documenctcion para la integracion de Material Design para el framework de Nuxt por lo cual tuve que hacer una investigacion de que librerias podria utilizar, instalarlas y probar cual era la mas indicada. 
+
+A su vez, logré constatar la importancia de detallar las User Stories, también que es muy importante la comunicación con el equipo de trabajo ya que al desarrollar por separado y luego integrarlo fue realmente facil debido a lo comunicación que se tuvo a la hora de desarrollar.
+
+Aunque no se pudo hacer las pruebas unitarias, estoy más predisupesto a implementarla en los proyectos que integro ya que perimite que el equipo de trabajo pueda verificar que el código está funcionando correctamente y evitar errores que pueden ocurrir y que pueden ser muy difíciles de detectar.
 
 Técnicas aplicadas y aprendizajes
