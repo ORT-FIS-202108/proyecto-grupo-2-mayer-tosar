@@ -121,7 +121,7 @@ Para cumplir los estandares de accesibilidad, teniamos como [criterio de aceptac
 
 Ademas de seguir los estándares de Google ([HTML](https://google.github.io/styleguide/htmlcssguide.html#HTML), [CSS](https://google.github.io/styleguide/htmlcssguide.html#CSS). [JavaScript]()), también se siguieron los estándares de [Vue](https://es.vuejs.org/v2/style-guide/)
 
-Buenas prácticas de OOP: separación de lógica e interfaz
+### Buenas prácticas de OOP: separación de lógica e interfaz
 
 En caso de nuestra implementación para el desarrollo de la plataforma MisGastos, no utilizamos OOP, sino que, utilizamos el modelo de diseño de sofwtare de cliente-servidor. Esto nos permitio crear la logica del negocio en el backend y la interfaz en el frontend, que a sus efectos, nos permitio separar la logica de la interfaz.
 
@@ -135,17 +135,26 @@ Se tomaron en cuenta las siguientes especificaciones:
 
 <hr>
 
-## Codificación
-
-IDE Visual Studio Code: configuración común del equipo
-
-Estándares de codificación Google (HTML, CSS, JavaScript)
-
-Buenas prácticas de OOP: separación de lógica e interfaz
 
 ## Test de sistema
 
 Realizar test de sistema en un entorno separado del desarrollo
+
+### Ambiente de testing independiente del desarrollo
+
+Para el correcto desarrollo del sistema, se tuvieron tres entornos:
+
+Produccion:
+* Frontend: https://mis-gastos-ort.netlify.app/
+* Backend: https://mis-gastos-fis.herokuapp.com/
+
+Staging/Testing:
+* Frontend: https://mis-gastos-testing.netlify.app/
+* Backend: https://mis-gastos-testing.herokuapp.com/
+
+Local ([Instalación](../install.md)):
+* Frontend: http://localhost:3000
+* Backend: http://localhost:5000
 
 Generar casos de prueba aplicando técnica partición equivalente
 
