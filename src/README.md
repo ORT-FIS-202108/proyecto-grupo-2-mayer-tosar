@@ -147,7 +147,34 @@ Buenas prácticas de OOP: separación de lógica e interfaz
 
 Realizar test de sistema en un entorno separado del desarrollo
 
-Generar casos de prueba aplicando técnica partición equivalente
+### Generar casos de prueba aplicando técnica partición equivalente
+
+#### Prueba: Login
+
+1. Variables de entrada
+    * Email
+    * Contraseña
+
+2. Clases de Equivalencia
+
+| Entrada/Variable | Clases Válidas | Clases Inválidas |
+|------------------|----------------|------------------|
+| Email            | Cumple con la expresion regular de email (1) | No cumple con la expresion regular de email (3)
+| Contraseña       | > 8 caracteres alfanuméricos o no alfanuméricos (2)| < 8 caracteres alfanuméricos y no alfanuméricos (4) 
+
+Expresion regular para verificacion de email:
+```
+/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+```
+
+3. Casos de Prueba
+
+| Caso de Prueba | Email | Contraseña | Resultado Esperado | Clases de Equivalencia cubiertas |
+|----------------|-------|------------|--------------------|----------------------------------|
+| CP 1 | hola@misgastos.com | Test1234 | Login Exitoso | 1 y 2 |
+| CP 2 | hola@misgastos.com | Test123 | Mensaje de error | 1 y 4 |
+| CP 3 | test@com | Test456789 | Mensaje de error | 2 y 3 |
+
 
 Detallar sesiones de prueba exploratoria
 
