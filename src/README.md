@@ -162,12 +162,16 @@ Detallar sesiones de prueba exploratoria
 
 ## Reporte de issues
 
-Para realizar el reporte de issues utilizamos la herramienta issues de github la cual nos permitió generar un flujo muy dinamico entre la creación de user stories que habiamos realizado en la primera etapa y nuevas tareas para la asignación de las mismas a los colaboradores.
+Para realizar el reporte de issues utilizamos la herramienta issues de github la cual nos permitió aparte de reportar bugs, generar un flujo muy dinamico entre la creación de user stories que habiamos realizado en la primera etapa y nuevas tareas para la asignación de las mismas a los colaboradores.
 
 Dentro de esta herramienta dividimos el flujo en tres columnas, To Do, In progress, Done, y etiquetamos las tareas con los correspondientes labels para tener una información general de cada tarea. A algunas de estas tareas se les asignó el branch correspondiente si era necesario crear una rama para la misma.
 
 En total fueron generados 20 isssues en los cuales quedaron 2 para realizar en una siguiente etapa.
 Cabe destacar que la mayoría de los incidentes tienen funcionalidades que estan contempladas verticalmente, esto significa que no fue dividida cada funcionalidad por frontend y backend, sino que dichas funcionalidades fueron pensadas para que los colaboradores cumplieran un rol mas orientado a full stack.
+
+En cuanto a los bugs, si bien era una aplicacion de tamaño no muy grande, encontramos algunos bugs y los reportamos con la severidad (bloqueante, urgente, no critico, menor) y prioridad (alta, media, baja) correspondientes.
+
+En total fueron reportados 2 bugs, habiendose corregido el 100% de los bugs reportados.
 
 Tablero de issues: https://github.com/ORT-FIS-202108/proyecto-grupo-2-mayer-tosar/projects/1
 
