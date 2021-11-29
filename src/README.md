@@ -61,7 +61,17 @@ El entorno de producción se puede encontrar en:
 | jest              | Es la librería para realizar los test en el sistema  |
 | vue-jest          | Es la librería que permite realizar test de Jest en Vue  |
 
-<!-- #### Backend TO DO -->
+#### Frontend
+
+| Librería                  | Uso |
+|---------------------------|-----|
+| cors                      | Es un package que permite hablitar determinadas configuraciones de CORS  | 
+| dotenv                    | Es un package que permite cargar variables de entorno desde el codigo  |
+| express                   | Es un framework para estructurar el proyecto en node  |
+| express-async-handler     | Es un package que permite manejar excepciones en las rutas de express  |
+| jsonwebtoken              | Es un package que permite generar un token asociado a cada usuario, al loguearse o registrarse  |
+| mongoose                  | Es un package que permite realizar la conexion, lectura y escritura a una base de datos de mongo|
+| bcryptjs                  | Es un package que permite la encriptacion para las contraseñas |
 
 <hr>
 
