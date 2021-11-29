@@ -23,15 +23,32 @@ Cumplimiento de estándar de accesibilidad WCAG
 
 Seguir especificación de estilo
 
+<hr>
+
 ## Codificación
 
-IDE Visual Studio Code: configuración común del equipo
+### IDE Visual Studio Code: configuración común del equipo
+
+En nuestro caso, al tener el dominio y la interfaz en diferentes tecnologias, en algunos casos se utilizaron diferentes configuraciones del IDE. 
+
+Extensiones Frontend:
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+* [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+* [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+* [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+* [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+* [vuetify-vscode](https://marketplace.visualstudio.com/items?itemName=vuetifyjs.vuetify-vscode)
+
+<!-- Extensiones Backend -->
 
 Estándares de codificación Google (HTML, CSS, JavaScript)
 
+Ademas de seguir los estándares de Google ([HTML](https://google.github.io/styleguide/htmlcssguide.html#HTML), [CSS](https://google.github.io/styleguide/htmlcssguide.html#CSS). [JavaScript]()), también se siguieron los estándares de [Vue](https://es.vuejs.org/v2/style-guide/)
+
 Buenas prácticas de OOP: separación de lógica e interfaz
 
-Análisis estático de código: mostrar reducción de problemas
+En caso de nuestra implementación para el desarrollo de la plataforma MisGastos, no utilizamos OOP, sino que, utilizamos el modelo de diseño de sofwtare de cliente-servidor. Esto nos permitio crear la logica del negocio en el backend y la interfaz en el frontend, que a sus efectos, nos permitio separar la logica de la interfaz.
 
 ## Test unitario
 
